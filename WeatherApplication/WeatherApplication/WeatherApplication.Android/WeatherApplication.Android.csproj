@@ -55,13 +55,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.2.0.839982" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.4.859</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.4.859</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -78,6 +87,186 @@
     <AndroidResource Include="Resources\mipmap-xhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cloudyday.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cloudyday2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\cloudynight.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\drops.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\night.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pin.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\pin2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rain2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rain3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rain4.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rain5.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\rainbow.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\snowfall.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\snowfall2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\snowfall3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\snowfall4.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\storm.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\storm2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\storm3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\storm4.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sun.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sunrise.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sunset.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\sunumbrella.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\thermometer.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\thermometer2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\thermometer3.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\thunder.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tornado.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\tornado2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\wind2.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\windy.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\windy2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cloudyday.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cloudyday2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\cloudynight.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\drops.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\night.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\pin.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\pin2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rain2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rain3.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rain4.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rain5.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\rainbow.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\snowfall.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\snowfall2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\snowfall3.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\snowfall4.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\storm.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\storm2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\storm3.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\storm4.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sun.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sunrise.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sunset.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\sunumbrella.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\thermometer.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\thermometer2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\thermometer3.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\thunder.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tornado.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\tornado2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\wind2.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\windy.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\windy2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cloudyday.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cloudyday2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\cloudynight.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\drops.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\night.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\pin.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\pin2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rain2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rain3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rain4.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rain5.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\rainbow.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\snowfall.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\snowfall2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\snowfall3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\snowfall4.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\storm.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\storm2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\storm3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\storm4.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sun.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sunrise.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sunset.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\sunumbrella.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\thermometer.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\thermometer2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\thermometer3.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\thunder.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tornado.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\tornado2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\wind2.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\windy.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\windy2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cloudyday.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cloudyday2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\cloudynight.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\drops.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\night.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\pin.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\pin2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rain2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rain3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rain4.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rain5.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\rainbow.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\snowfall.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\snowfall2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\snowfall3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\snowfall4.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\storm.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\storm2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\storm3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\storm4.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sun.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sunrise.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sunset.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\sunumbrella.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\thermometer.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\thermometer2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\thermometer3.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\thunder.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tornado.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\tornado2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\wind2.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\windy.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\windy2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cloudy.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cloudyday.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cloudyday2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\cloudynight.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\drops.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\night.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\pin.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\pin2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\rain.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\rain2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\rain3.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\rain4.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\rain5.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\rainbow.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\snowfall.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\snowfall2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\snowfall3.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\snowfall4.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\storm.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\storm2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\storm3.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\storm4.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sun.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sunrise.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sunset.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\sunumbrella.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\thermometer.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\thermometer2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\thermometer3.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\thunder.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tornado.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\tornado2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\wind.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\wind2.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\windy.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\windy2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -91,9 +280,17 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeatherApplication\WeatherApplication.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{4F0626B6-7260-44B4-8AC8-B53AD42FF2E2}</Project>
       <Name>WeatherApplication</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

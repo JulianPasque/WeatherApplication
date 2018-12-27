@@ -5,8 +5,31 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.2.0.839982" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.4.859" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.4.859" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\MainPage.xaml" />
+    <EmbeddedResource Remove="Views\SubViews\DailyForecast.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\MainPage.xaml.cs" />
+    <Compile Remove="Views\WeatherOverview.cs" />
+    <Compile Remove="Services\API\HTTP.cs" />
+    <Compile Remove="Views\AdressBasedWeather.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\API\" />
+    <Folder Include="Views\SubViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WeatherObjects\WeatherObjects.csproj" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="WeatherApplication.Views.SubViews.HourlyForecast"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+
+
+    <StackLayout Orientation="Vertical">
+        
+        <Label Text="Jetzt" HorizontalOptions="Center"/>
+       
+          <ffimageloading:CachedImage 
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center"
+                                    DownsampleToViewSize="true"
+                                    Source="cloudy.png"/>
+    
+        
+        <Label Text="15°" HorizontalOptions="Center"/>
+
+    </StackLayout>
+    
+    
+</ContentView>
+

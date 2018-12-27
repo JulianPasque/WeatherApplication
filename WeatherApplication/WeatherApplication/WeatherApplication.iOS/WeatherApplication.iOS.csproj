@@ -173,6 +173,114 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\ItunesArtwork@2x.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\cloudy.imageset\001thermometer.png" />
+    <ImageAsset Include="Assets.xcassets\cloudy.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cloudyday.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cloudyday2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cloudynight.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\drops.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\night.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\pin.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\pin2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\rain.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\rain2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\rain3.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\rain4.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\rain5.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\rainbow.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\snowfall.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\snowfall2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\snowfall3.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\snowfall4.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\storm.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\storm2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\storm3.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\storm4.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\sun.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\sunrise.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\sunset.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\sunumbrella.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\thermometer.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\thermometer2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\thermometer3.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\thunder.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tornado.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\tornado2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\wind.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\wind2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\windy.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\windy2.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cloudyday.imageset\cloudyday_Small.png" />
+    <ImageAsset Include="Assets.xcassets\cloudyday2.imageset\cloudyday2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\cloudynight.imageset\cloudynight_Small.png" />
+    <ImageAsset Include="Assets.xcassets\drops.imageset\drops_Small.png" />
+    <ImageAsset Include="Assets.xcassets\night.imageset\night_Small.png" />
+    <ImageAsset Include="Assets.xcassets\pin.imageset\pin_Small.png" />
+    <ImageAsset Include="Assets.xcassets\pin2.imageset\pin2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\rain.imageset\rain_Small.png" />
+    <ImageAsset Include="Assets.xcassets\rain2.imageset\rain2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\rain3.imageset\rain3_Small.png" />
+    <ImageAsset Include="Assets.xcassets\rain4.imageset\rain4_Small.png" />
+    <ImageAsset Include="Assets.xcassets\rain5.imageset\rain5_Small.png" />
+    <ImageAsset Include="Assets.xcassets\rainbow.imageset\rainbow_Small.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall.imageset\snowfall_Small.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall2.imageset\snowfall2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall3.imageset\snowfall3_Small.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall4.imageset\snowfall4_Small.png" />
+    <ImageAsset Include="Assets.xcassets\storm.imageset\storm_Small.png" />
+    <ImageAsset Include="Assets.xcassets\storm2.imageset\storm2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\storm3.imageset\storm3_Small.png" />
+    <ImageAsset Include="Assets.xcassets\storm4.imageset\storm4_Small.png" />
+    <ImageAsset Include="Assets.xcassets\sun.imageset\sun_Small.png" />
+    <ImageAsset Include="Assets.xcassets\sunrise.imageset\sunrise_Small.png" />
+    <ImageAsset Include="Assets.xcassets\sunset.imageset\sunset_Small.png" />
+    <ImageAsset Include="Assets.xcassets\sunumbrella.imageset\sunumbrella_Small.png" />
+    <ImageAsset Include="Assets.xcassets\thermometer.imageset\thermometer_Small.png" />
+    <ImageAsset Include="Assets.xcassets\thermometer2.imageset\thermometer2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\thermometer3.imageset\thermometer3_Small.png" />
+    <ImageAsset Include="Assets.xcassets\thunder.imageset\thunder_Small.png" />
+    <ImageAsset Include="Assets.xcassets\tornado.imageset\tornado_Small.png" />
+    <ImageAsset Include="Assets.xcassets\tornado2.imageset\tornado2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\wind.imageset\wind_Small.png" />
+    <ImageAsset Include="Assets.xcassets\wind2.imageset\wind2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\windy.imageset\windy_Small.png" />
+    <ImageAsset Include="Assets.xcassets\windy2.imageset\windy2_Small.png" />
+    <ImageAsset Include="Assets.xcassets\cloudy.imageset\cloudy_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\cloudyday.imageset\cloudyday_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\cloudyday2.imageset\cloudyday2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\cloudynight.imageset\cloudynight_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\drops.imageset\drops_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\night.imageset\night_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\pin.imageset\pin_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\pin2.imageset\pin2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\rain.imageset\rain_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\rain2.imageset\rain2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\rain3.imageset\rain3_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\rain4.imageset\rain4_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\rain5.imageset\rain5_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\rainbow.imageset\rainbow_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall.imageset\snowfall_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall2.imageset\snowfall2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall3.imageset\snowfall3_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\snowfall4.imageset\snowfall4_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\storm.imageset\storm_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\storm2.imageset\storm2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\storm3.imageset\storm3_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\storm4.imageset\storm4_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\sun.imageset\sun_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\sunrise.imageset\sunrise_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\sunset.imageset\sunset_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\sunumbrella.imageset\sunumbrella_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\thermometer.imageset\thermometer_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\thermometer2.imageset\thermometer2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\thermometer3.imageset\thermometer3_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\thunder.imageset\thunder_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\tornado.imageset\tornado_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\tornado2.imageset\tornado2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\wind.imageset\wind_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\wind2.imageset\wind2_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\windy.imageset\windy_Medium.png" />
+    <ImageAsset Include="Assets.xcassets\windy2.imageset\windy2_Medium.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h@2x.png" />
@@ -189,14 +297,55 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.2.0.839982" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.1.0.431" />
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.0.0</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeatherApplication\WeatherApplication.csproj">
-      <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
+      <Project>{4F0626B6-7260-44B4-8AC8-B53AD42FF2E2}</Project>
       <Name>WeatherApplication</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\cloudy.imageset\" />
+    <Folder Include="Assets.xcassets\cloudyday.imageset\" />
+    <Folder Include="Assets.xcassets\cloudyday2.imageset\" />
+    <Folder Include="Assets.xcassets\cloudynight.imageset\" />
+    <Folder Include="Assets.xcassets\drops.imageset\" />
+    <Folder Include="Assets.xcassets\night.imageset\" />
+    <Folder Include="Assets.xcassets\pin.imageset\" />
+    <Folder Include="Assets.xcassets\pin2.imageset\" />
+    <Folder Include="Assets.xcassets\rain.imageset\" />
+    <Folder Include="Assets.xcassets\rain2.imageset\" />
+    <Folder Include="Assets.xcassets\rain3.imageset\" />
+    <Folder Include="Assets.xcassets\rain4.imageset\" />
+    <Folder Include="Assets.xcassets\rain5.imageset\" />
+    <Folder Include="Assets.xcassets\rainbow.imageset\" />
+    <Folder Include="Assets.xcassets\snowfall.imageset\" />
+    <Folder Include="Assets.xcassets\snowfall2.imageset\" />
+    <Folder Include="Assets.xcassets\snowfall3.imageset\" />
+    <Folder Include="Assets.xcassets\snowfall4.imageset\" />
+    <Folder Include="Assets.xcassets\storm.imageset\" />
+    <Folder Include="Assets.xcassets\storm2.imageset\" />
+    <Folder Include="Assets.xcassets\storm3.imageset\" />
+    <Folder Include="Assets.xcassets\storm4.imageset\" />
+    <Folder Include="Assets.xcassets\sun.imageset\" />
+    <Folder Include="Assets.xcassets\sunrise.imageset\" />
+    <Folder Include="Assets.xcassets\sunset.imageset\" />
+    <Folder Include="Assets.xcassets\sunumbrella.imageset\" />
+    <Folder Include="Assets.xcassets\thermometer.imageset\" />
+    <Folder Include="Assets.xcassets\thermometer2.imageset\" />
+    <Folder Include="Assets.xcassets\thermometer3.imageset\" />
+    <Folder Include="Assets.xcassets\thunder.imageset\" />
+    <Folder Include="Assets.xcassets\tornado.imageset\" />
+    <Folder Include="Assets.xcassets\tornado2.imageset\" />
+    <Folder Include="Assets.xcassets\wind.imageset\" />
+    <Folder Include="Assets.xcassets\wind2.imageset\" />
+    <Folder Include="Assets.xcassets\windy.imageset\" />
+    <Folder Include="Assets.xcassets\windy2.imageset\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

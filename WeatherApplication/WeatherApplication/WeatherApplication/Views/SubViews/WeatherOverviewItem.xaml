@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="WeatherApplication.Views.SubViews.WeatherOverviewItem"
+             xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
+             >
+
+    <Grid Padding="0,20">
+        
+       <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="83"/>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+    
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>          
+            <ColumnDefinition Width="*"/>          
+            <ColumnDefinition Width="*"/>          
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+    
+    <Label Grid.Row="0" FontSize="35" Grid.Column="1" Grid.ColumnSpan="3" Text="Stadt" HorizontalOptions="Start" VerticalOptions="Start"/>
+    <Label Grid.Row="0" FontSize="35" Grid.Column="4" Text="+20°" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+    
+    <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="1"/>
+        
+      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="1"/>  
+      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="2"/>  
+      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="3"/>  
+      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="4"/>  
+        
+   
+    <BoxView BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="5" HeightRequest="1"/>
+    
+       
+        
+      <SubViews:ForeCast ForecastDate="Morgen" Grid.Row="4"  Grid.Column="1" Grid.ColumnSpan="4"/>  
+      <SubViews:ForeCast ForecastDate="Übermorgen" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4"/>  
+      <SubViews:ForeCast ForecastDate="Der Tag danach" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"/>  
+      <SubViews:ForeCast ForecastDate="In 4 Tagen" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4"/>      
+        
+    </Grid>
+    
+</ContentView>
+

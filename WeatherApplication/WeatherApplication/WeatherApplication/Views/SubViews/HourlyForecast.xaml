@@ -7,7 +7,7 @@
 
     <StackLayout Orientation="Vertical">
         
-        <Label Text="Jetzt" HorizontalOptions="Center"/>
+        <Label x:Name="LblTime" Text="Jetzt" HorizontalOptions="Center"/>
        
           <ffimageloading:CachedImage 
                                     HorizontalOptions="Center" 

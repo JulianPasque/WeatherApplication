@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WeatherApplication.Views.SubViews.WeatherOverviewItem"
              xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
-             >
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+
 
     <Grid Padding="0,20">
         
@@ -25,28 +26,61 @@
             <ColumnDefinition Width="*"/>          
             <ColumnDefinition Width="*"/>          
             <ColumnDefinition Width="*"/>          
+            <ColumnDefinition Width="*"/>          
+            <ColumnDefinition Width="*"/>          
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
     
     <Label Grid.Row="0" FontSize="35" Grid.Column="1" Grid.ColumnSpan="3" Text="Stadt" HorizontalOptions="Start" VerticalOptions="Start"/>
-    <Label Grid.Row="0" FontSize="35" Grid.Column="4" Text="+20°" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
-    
-    <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="5" HeightRequest="1"/>
-        
-      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="1"/>  
-      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="2"/>  
-      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="3"/>  
-      <SubViews:HourlyForecast Grid.Row="2" Grid.Column="4"/>  
-        
+    <Label Grid.Row="0" FontSize="35" Grid.Column="5" Grid.ColumnSpan="2" Text="+20°" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
    
-    <BoxView BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="5" HeightRequest="1"/>
+
+        
+    <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="8" HeightRequest="1"/>
+        
+        
+        <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="1" >
+        
+            <Label
+                HorizontalOptions="Center"
+                Text="08:51"/>
+            <ffimageloading:CachedImage 
+                                  
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center"
+                                    DownsampleToViewSize="true"
+                                    Source="sunrise.png"/>
+        </StackLayout>
+            
+      <SubViews:HourlyForecast ForecastTime="9:00" Grid.Row="2" Grid.Column="2"/>  
+      <SubViews:HourlyForecast ForecastTime="12:00" Grid.Row="2" Grid.Column="3"/>  
+      <SubViews:HourlyForecast ForecastTime="15:00" Grid.Row="2" Grid.Column="4"/>  
+        
+        <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="5" >
+        
+            <Label 
+                HorizontalOptions="Center"
+                Text="15:51"/>
+            <ffimageloading:CachedImage 
+                                  
+                                    HorizontalOptions="Center" 
+                                    VerticalOptions="Center"
+                                    DownsampleToViewSize="true"
+                                    Source="sunset.png"/>
+        </StackLayout>
+   
+        
+        
+      <SubViews:HourlyForecast ForecastTime="18:00" Grid.Row="2" Grid.Column="6"/>  
+                
+    <BoxView BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="8" HeightRequest="1"/>
     
        
         
-      <SubViews:ForeCast ForecastDate="Morgen" Grid.Row="4"  Grid.Column="1" Grid.ColumnSpan="4"/>  
-      <SubViews:ForeCast ForecastDate="Übermorgen" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4"/>  
-      <SubViews:ForeCast ForecastDate="Der Tag danach" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"/>  
-      <SubViews:ForeCast ForecastDate="In 4 Tagen" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4"/>      
+      <SubViews:ForeCast ForecastDate="Freitag 28.12" Grid.Row="4"  Grid.Column="1" Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast ForecastDate="Samstag 29.12" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast ForecastDate="Sonntag 30.12" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast ForecastDate="Montag 31.12" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="6"/>      
         
     </Grid>
     

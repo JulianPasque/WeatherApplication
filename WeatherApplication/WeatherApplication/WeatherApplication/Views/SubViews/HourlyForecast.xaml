@@ -2,10 +2,11 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WeatherApplication.Views.SubViews.HourlyForecast"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             CompressedLayout.IsHeadless="true">
 
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical" CompressedLayout.IsHeadless="true">
         
         <Label x:Name="LblTime" Text="Jetzt" HorizontalOptions="Center"/>
        
@@ -13,7 +14,7 @@
                                     HorizontalOptions="Center" 
                                     VerticalOptions="Center"
                                     DownsampleToViewSize="true"
-                                    Source="cloudy.png"/>
+                                    Source="sun.png"/>
     
         
         <Label Text="15°" HorizontalOptions="Center"/>

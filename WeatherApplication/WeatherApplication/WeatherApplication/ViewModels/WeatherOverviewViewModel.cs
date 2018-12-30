@@ -12,16 +12,7 @@ namespace WeatherApplication.ViewModels
         public WeatherOverviewViewModel(INavigationService navigationService)
             : base(navigationService)
         {
-            LoadData();
         }
 
-        
-
-
-
-        public async Task LoadData()
-        {
-            var x = await WeatherAPI.GetWeather();
-        }
     }
 }

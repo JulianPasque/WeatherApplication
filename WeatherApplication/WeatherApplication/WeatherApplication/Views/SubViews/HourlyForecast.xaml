@@ -13,7 +13,6 @@
           <ffimageloading:CachedImage 
                                     HorizontalOptions="Center" 
                                     VerticalOptions="Center"
-                                    DownsampleToViewSize="true"
                                     Source="sun.png"/>
     
         

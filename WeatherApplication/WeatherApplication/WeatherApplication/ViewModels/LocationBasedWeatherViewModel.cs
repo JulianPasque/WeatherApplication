@@ -1,11 +1,13 @@
 ﻿using System;
 using Prism;
 using Prism.Mvvm;
+using WeatherApplication.Services.API;
+using WeatherObjects;
 using Xamarin.Essentials;
 
 namespace WeatherApplication.ViewModels
 {
-    public class LocationBasedWeatherViewModel : BindableBase, IActiveAware
+    public class LocationBasedWeatherViewModel : ViewModelBase, IActiveAware
     {
 
         public event EventHandler IsActiveChanged;
@@ -34,7 +36,8 @@ namespace WeatherApplication.ViewModels
 
                 if (location != null)
                 {
-                    Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                    LoadWeather (await WeatherAPI.GetWeatherForLocation(location.Latitude, location.Longitude));
+
                 }
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -56,8 +59,5 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        public LocationBasedWeatherViewModel()
-        {
-        }
     }
 }

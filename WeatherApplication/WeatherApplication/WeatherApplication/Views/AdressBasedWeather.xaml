@@ -6,8 +6,38 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              ios:Page.UseSafeArea="true"
              Title="Adress search">
-             
-    <SubViews:WeatherOverviewItem />
+           
+    <StackLayout Orientation="Vertical" 
+                 Spacing="0">
+    
+            <StackLayout HeightRequest="15" 
+                         BackgroundColor="Silver" 
+                         IsClippedToBounds="true"
+                         x:Name="StkAdressEntry" 
+                         Orientation="Vertical">
+              
+                   <Editor Margin="0,15,0,0"
+                           Placeholder="CountryCode" 
+                           Text="{Binding Country}" />
+            
+                   <Editor Placeholder="City" 
+                           Text="{Binding City}" />
+            
+                   <Button Text="Wetter laden" 
+                           Command="ReloadWeather" 
+                           HorizontalOptions="Fill"/>
+            
+                    <StackLayout.GestureRecognizers>
+                         <SwipeGestureRecognizer Direction="Down" 
+                                                 Swiped="Expand"/>
+                         <SwipeGestureRecognizer Direction="Up" 
+                                                 Swiped="Collapse"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
 
+            <SubViews:WeatherOverviewItem IsVisible="{Binding RequestSuccessfull}"
+                                          VerticalOptions="Start"/>
+                                         
+    </StackLayout>  
 </ContentPage>
 

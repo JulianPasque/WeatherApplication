@@ -10,12 +10,12 @@ namespace WeatherApplication.Services.API
     public static class WeatherAPI
     {
       
-        public static async Task<WeatherContainer> GetWeather()
+        public static async Task<WeatherContainer> GetWeatherForCity(string City, string CountryCode)
         {
             try
             { 
             var httpClient = new HttpClient();
-            var Response = await httpClient.GetAsync(new Uri("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=3c8cca1d3ee836b0f48694e47f4ea0d8"));
+            var Response = await httpClient.GetAsync(new Uri("http://api.openweathermap.org/data/2.5/weather?q="+ City +","+ CountryCode + "&APPID=3c8cca1d3ee836b0f48694e47f4ea0d8&units=metric"));
 
             if (Response.StatusCode == System.Net.HttpStatusCode.OK)
 
@@ -29,6 +29,26 @@ namespace WeatherApplication.Services.API
                 Debug.WriteLine(e.Message);
             }
             return null; 
+
+        }
+
+        public static async Task<WeatherContainer> GetWeatherForLocation(double Latitude, double Longitude)
+        {
+            try
+            {
+                var httpClient = new HttpClient();
+                var Response = await httpClient.GetAsync(new Uri("http://api.openweathermap.org/data/2.5/weather?lat=" +Latitude +  "&lon=" + Longitude+ "&appid=3c8cca1d3ee836b0f48694e47f4ea0d8&units=metric"));
+
+                if (Response.StatusCode == System.Net.HttpStatusCode.OK)
+
+                    return JsonConvert.DeserializeObject<WeatherContainer>(await Response.Content.ReadAsStringAsync());
+
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
+            return null;
 
         }
 

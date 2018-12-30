@@ -22,6 +22,7 @@
     <Compile Remove="Views\WeatherOverview.cs" />
     <Compile Remove="Services\API\HTTP.cs" />
     <Compile Remove="Views\AdressBasedWeather.cs" />
+    <Compile Remove="ViewModels\WeatherBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

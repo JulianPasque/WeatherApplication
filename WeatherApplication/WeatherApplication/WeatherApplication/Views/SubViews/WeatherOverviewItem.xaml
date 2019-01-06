@@ -7,7 +7,7 @@
              CompressedLayout.IsHeadless="true">
 
 
-    <Grid Padding="0,20" CompressedLayout.IsHeadless="true">
+    <Grid Padding="0,10" CompressedLayout.IsHeadless="true">
         
        <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -52,10 +52,10 @@
                                     Source="sunrise.png"/>
         </StackLayout>
             
-      <SubViews:HourlyForecast ForecastTime="9:00" Grid.Row="2" Grid.Column="2"/>  
+    <!--  <SubViews:HourlyForecast ForecastTime="9:00"   Grid.Row="2" Grid.Column="2"/>  
       <SubViews:HourlyForecast ForecastTime="12:00" Grid.Row="2" Grid.Column="3"/>  
-      <SubViews:HourlyForecast ForecastTime="15:00" Grid.Row="2" Grid.Column="4"/>  
-        
+      <SubViews:HourlyForecast ForecastTime="15:00"   Grid.Row="2" Grid.Column="4"/>  
+        -->
         <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="5" >
         
             <Label 
@@ -69,9 +69,8 @@
         </StackLayout>
    
         
-        
-      <SubViews:HourlyForecast ForecastTime="18:00" Grid.Row="2" Grid.Column="6"/>  
-                
+<!--    <SubViews:HourlyForecast ForecastTime="18:00" ForecastTemp="10" Grid.Row="2" Grid.Column="6"/>  
+-->           
     <BoxView BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="8" HeightRequest="1"/>
     
        

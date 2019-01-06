@@ -2,24 +2,21 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WeatherApplication.Views.SubViews.HourlyForecast"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             >
-
-
-    <StackLayout Orientation="Vertical" CompressedLayout.IsHeadless="true">
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms">
+             
+    <StackLayout Orientation="Vertical"
+                 CompressedLayout.IsHeadless="true">
         
-        <Label x:Name="LblTime" Text="Jetzt" HorizontalOptions="Center"/>
-       
-          <ffimageloading:CachedImage 
+        <Label x:Name="LblTime"
+               HorizontalOptions="Center"/>
+      
+        <ffimageloading:CachedImage x:Name="ImgWeather"
                                     HorizontalOptions="Center" 
-                                    VerticalOptions="Center"
-                                    Source="sun.png"/>
-    
-        
-        <Label Text="15°" HorizontalOptions="Center"/>
+                                    VerticalOptions="Center"/>
+                                    
+        <Label x:Name="LblTemp" 
+               HorizontalOptions="Center"/>
 
     </StackLayout>
-    
-    
 </ContentView>
 

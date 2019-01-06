@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using FFImageLoading.Svg.Forms;
+using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -23,6 +24,7 @@ namespace WeatherApplication.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            var ignore = typeof(SvgCachedImage);
 
             LoadApplication(new App());
 

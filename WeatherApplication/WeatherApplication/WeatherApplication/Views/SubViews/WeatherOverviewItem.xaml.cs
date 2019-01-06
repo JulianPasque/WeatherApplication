@@ -10,5 +10,7 @@ namespace WeatherApplication.Views.SubViews
         {
             InitializeComponent();
         }
+
+
     }
 }

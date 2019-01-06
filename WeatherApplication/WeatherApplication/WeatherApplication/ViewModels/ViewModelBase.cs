@@ -42,13 +42,22 @@ namespace WeatherApplication.ViewModels
 
         }
 
-        public void LoadWeather(WeatherContainer weatherContainer)
+        public void LoadWeather(WeatherContainer weatherContainer, WeatherForecastContainer WeatherForecast)
         {
             
             CityName = weatherContainer.name;
             CurrentTemp = weatherContainer.main.temp;
+            SunRise = UnixTimeStampToDateTime(weatherContainer.sys.sunrise);
+            SunSet = UnixTimeStampToDateTime(weatherContainer.sys.sunset);
         }
 
+        public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
+        {
+            // Unix timestamp is seconds past epoch
+            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
+            dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dtDateTime;
+        }
 
         bool _RequestSuccessfull;
         public bool RequestSuccessfull
@@ -115,6 +124,39 @@ namespace WeatherApplication.ViewModels
                 RaisePropertyChanged(nameof(CurrentTemp));
             }
         }
+
+        private DateTime _SunRise;
+        public DateTime SunRise
+        {
+            get
+            {
+                return _SunRise;
+            }
+            set
+            {
+                if (_SunRise == value)
+                    return;
+                _SunRise = value;
+                RaisePropertyChanged(nameof(SunRise));
+            }
+        }
+
+        private DateTime _SunSet;
+        public DateTime SunSet
+        {
+            get
+            {
+                return _SunSet;
+            }
+            set
+            {
+                if (_SunSet == value)
+                    return;
+                _SunSet = value;
+                RaisePropertyChanged(nameof(SunSet));
+            }
+        }
+
 
     }
 }

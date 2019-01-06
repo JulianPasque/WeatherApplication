@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
     <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
@@ -69,6 +69,9 @@
       <Version>2.4.4.859</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.4.859</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
       <Version>2.4.4.859</Version>
     </PackageReference>
   </ItemGroup>
@@ -267,6 +270,61 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\wind2.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\windy.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\windy2.png" />
+    <AndroidResource Include="Resources\drawable\albania.svg" />
+    <AndroidResource Include="Resources\drawable\argentina.svg" />
+    <AndroidResource Include="Resources\drawable\australia.svg" />
+    <AndroidResource Include="Resources\drawable\austria.svg" />
+    <AndroidResource Include="Resources\drawable\belarus.svg" />
+    <AndroidResource Include="Resources\drawable\belgium.svg" />
+    <AndroidResource Include="Resources\drawable\brazil.svg" />
+    <AndroidResource Include="Resources\drawable\china.svg" />
+    <AndroidResource Include="Resources\drawable\croatia.svg" />
+    <AndroidResource Include="Resources\drawable\cuba.svg" />
+    <AndroidResource Include="Resources\drawable\czechrepublic.svg" />
+    <AndroidResource Include="Resources\drawable\denmark.svg" />
+    <AndroidResource Include="Resources\drawable\dominicanrepublic.svg" />
+    <AndroidResource Include="Resources\drawable\ecuador.svg" />
+    <AndroidResource Include="Resources\drawable\egypt.svg" />
+    <AndroidResource Include="Resources\drawable\finland.svg" />
+    <AndroidResource Include="Resources\drawable\france.svg" />
+    <AndroidResource Include="Resources\drawable\germany.svg" />
+    <AndroidResource Include="Resources\drawable\ghana.svg" />
+    <AndroidResource Include="Resources\drawable\greece.svg" />
+    <AndroidResource Include="Resources\drawable\hungary.svg" />
+    <AndroidResource Include="Resources\drawable\iceland.svg" />
+    <AndroidResource Include="Resources\drawable\india.svg" />
+    <AndroidResource Include="Resources\drawable\iran.svg" />
+    <AndroidResource Include="Resources\drawable\ireland.svg" />
+    <AndroidResource Include="Resources\drawable\italy.svg" />
+    <AndroidResource Include="Resources\drawable\jamaica.svg" />
+    <AndroidResource Include="Resources\drawable\japan.svg" />
+    <AndroidResource Include="Resources\drawable\madagascar.svg" />
+    <AndroidResource Include="Resources\drawable\malaysia.svg" />
+    <AndroidResource Include="Resources\drawable\mexico.svg" />
+    <AndroidResource Include="Resources\drawable\montenegro.svg" />
+    <AndroidResource Include="Resources\drawable\netherlands.svg" />
+    <AndroidResource Include="Resources\drawable\newzealand.svg" />
+    <AndroidResource Include="Resources\drawable\niger.svg" />
+    <AndroidResource Include="Resources\drawable\norway.svg" />
+    <AndroidResource Include="Resources\drawable\pakistan.svg" />
+    <AndroidResource Include="Resources\drawable\paraguay.svg" />
+    <AndroidResource Include="Resources\drawable\poland.svg" />
+    <AndroidResource Include="Resources\drawable\portugal.svg" />
+    <AndroidResource Include="Resources\drawable\romania.svg" />
+    <AndroidResource Include="Resources\drawable\russianfederation.svg" />
+    <AndroidResource Include="Resources\drawable\saudiarabia.svg" />
+    <AndroidResource Include="Resources\drawable\slovenia.svg" />
+    <AndroidResource Include="Resources\drawable\southafrica.svg" />
+    <AndroidResource Include="Resources\drawable\spain.svg" />
+    <AndroidResource Include="Resources\drawable\sweden.svg" />
+    <AndroidResource Include="Resources\drawable\switzerland.svg" />
+    <AndroidResource Include="Resources\drawable\thailand.svg" />
+    <AndroidResource Include="Resources\drawable\turkey.svg" />
+    <AndroidResource Include="Resources\drawable\uganda.svg" />
+    <AndroidResource Include="Resources\drawable\unitedkingdom.svg" />
+    <AndroidResource Include="Resources\drawable\ukraine.svg" />
+    <AndroidResource Include="Resources\drawable\unitedstates.svg" />
+    <AndroidResource Include="Resources\drawable\uruguay.svg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
@@ -291,6 +349,9 @@
     <Folder Include="Resources\drawable-xhdpi\" />
     <Folder Include="Resources\drawable-xxhdpi\" />
     <Folder Include="Resources\drawable-xxxhdpi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\fa-regular-400.ttf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

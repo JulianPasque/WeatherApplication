@@ -31,6 +31,9 @@ namespace WeatherApplication
             containerRegistry.RegisterForNavigation<LocationBasedWeather>();
             containerRegistry.RegisterForNavigation<AdressBasedWeather>();
             containerRegistry.RegisterForNavigation<WeatherOverview, WeatherOverviewViewModel>();
+            containerRegistry.RegisterForNavigation<CountryPickerPage>();
+
+
         }
     }
 }

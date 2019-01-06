@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using WeatherApplication.Services;
+using WeatherObjects.Enums;
 using Xamarin.Forms;
 
 namespace WeatherApplication.Views.SubViews
@@ -14,17 +16,14 @@ namespace WeatherApplication.Views.SubViews
 
         public string ForecastTime
         {
-            get
-            {
-                return (string)base.GetValue(ForecasttTimeProperty);
-            }
+            get => (string)base.GetValue(ForecastTimeProperty);
             set
             {
                 if (ForecastTime != value)
-                    base.SetValue(ForecasttTimeProperty, value);
+                    base.SetValue(ForecastTimeProperty, value);
             }
         }
-        public static readonly BindableProperty ForecasttTimeProperty = BindableProperty.Create(
+        public static readonly BindableProperty ForecastTimeProperty = BindableProperty.Create(
                 nameof(ForecastTime),
                 typeof(string),
                 typeof(ContentView),
@@ -33,6 +32,43 @@ namespace WeatherApplication.Views.SubViews
                 {
                     (bindable as HourlyForecast).LblTime.Text = newValue.ToString();
                 });
+
+        public string ForecastTemp
+        {
+            get => (string)base.GetValue(ForecastTempProperty);
+            set
+            {
+                if (ForecastTemp != value)
+                    base.SetValue(ForecastTempProperty, value);
+            }
+        }
+        public static readonly BindableProperty ForecastTempProperty = BindableProperty.Create(
+                nameof(ForecastTemp),
+                typeof(string),
+                typeof(ContentView),
+                string.Empty,
+                propertyChanging: (bindable, oldValue, newValue) =>
+                {
+                    (bindable as HourlyForecast).LblTemp.Text = newValue.ToString();
+                });
+
+        public Weather ForecastWeather
+        {
+            get => (Weather)base.GetValue(ForecastWeatherProperty);
+            set
+            {
+                if (ForecastWeather != value)
+                    base.SetValue(ForecastWeatherProperty, value);
+            }
+        }
+        public static readonly BindableProperty ForecastWeatherProperty = BindableProperty.Create(
+                nameof(ForecastWeather),
+                typeof(Weather),
+                typeof(ContentView),
+                string.Empty,
+                propertyChanging: (bindable, oldValue, newValue) =>
+                {
+                    (bindable as HourlyForecast).ImgWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue);                });
     }
 
 

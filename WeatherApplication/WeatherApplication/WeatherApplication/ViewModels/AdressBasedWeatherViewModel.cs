@@ -1,23 +1,40 @@
 ﻿using System;
 using Prism;
 using Prism.Commands;
+using Prism.Navigation;
 using WeatherApplication.Services.API;
+using WeatherObjects;
 
 namespace WeatherApplication.ViewModels
 {
     public class AdressBasedWeatherViewModel : ViewModelBase, IActiveAware
     {
-        public AdressBasedWeatherViewModel()
+        public AdressBasedWeatherViewModel(INavigationService navigationService)
+            : base(navigationService)
         {
             ReloadWeather = new DelegateCommand(LoadWeather);
+            SelectCountry = new DelegateCommand(CountrySelection);
         }
 
         public DelegateCommand ReloadWeather { get; set; }
+        public DelegateCommand SelectCountry { get; set; }
 
 
-        string _Country = "UK";
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
 
-        public string Country 
+            if (parameters.ContainsKey("Country"))
+            {
+                Country = parameters.GetValue<Country>("Country");
+
+            }
+
+        }
+
+        Country _Country = new Country() { Name = "United Kingdom", CountryCode = "GB" };
+
+        public Country Country 
         {
             get
             {
@@ -71,11 +88,19 @@ namespace WeatherApplication.ViewModels
             IsActiveChanged?.Invoke(this, EventArgs.Empty);
         }
 
+        public async void CountrySelection()
+        {
+            await NavigationService.NavigateAsync("CountryPickerPage");
+
+
+        }
+
         public async void LoadWeather()
         {
             try
             {
-                LoadWeather(await WeatherAPI.GetWeatherForCity(City, Country));
+                LoadWeather(await WeatherAPI.GetCurrentWeatherForCity(City, Country.CountryCode),
+                            await WeatherAPI.GetForecastForCity(City, Country.CountryCode));
                 RequestSuccessfull = true;
 
             }

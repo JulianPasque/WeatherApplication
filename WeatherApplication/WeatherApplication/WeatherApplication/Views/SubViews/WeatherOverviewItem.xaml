@@ -4,10 +4,10 @@
              x:Class="WeatherApplication.Views.SubViews.WeatherOverviewItem"
              xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             CompressedLayout.IsHeadless="true">
+             >
 
 
-    <Grid Padding="0,10" CompressedLayout.IsHeadless="true">
+    <Grid Padding="0,10">
         
        <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -32,12 +32,14 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
     
+            <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="8" HeightRequest="1"/>
+                <BoxView BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="8" HeightRequest="1"/>
+
     <Label Grid.Row="0" FontSize="35" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding CityName}" HorizontalOptions="Start" VerticalOptions="Start"/>
-    <Label Grid.Row="0" FontSize="35" Grid.Column="5" Grid.ColumnSpan="2" Text="{Binding CurrentTemp, StringFormat='{0:N2}°'}}" HorizontalOptions="EndAndExpand" VerticalOptions="Start"/>
+    <Label Grid.Row="0" FontSize="35" Grid.Column="5" Grid.ColumnSpan="2" Text="{Binding CurrentTemp, StringFormat='{0:N2}°'}}" HorizontalOptions="End" VerticalOptions="Start"/>
    
 
         
-    <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="8" HeightRequest="1"/>
         
         
         <StackLayout Orientation="Vertical" Grid.Row="2" Grid.Column="1" >
@@ -71,7 +73,6 @@
         
 <!--    <SubViews:HourlyForecast ForecastTime="18:00" ForecastTemp="10" Grid.Row="2" Grid.Column="6"/>  
 -->           
-    <BoxView BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="8" HeightRequest="1"/>
     
        
         

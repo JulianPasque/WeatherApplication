@@ -325,6 +325,7 @@
     <AndroidResource Include="Resources\drawable\ukraine.svg" />
     <AndroidResource Include="Resources\drawable\unitedstates.svg" />
     <AndroidResource Include="Resources\drawable\uruguay.svg" />
+    <AndroidResource Include="Resources\drawable\arrow.svg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />

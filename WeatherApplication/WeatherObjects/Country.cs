@@ -13,12 +13,8 @@ public class Country
         {
             get
             {
-
-                return Name.Replace(" ", "") + ".svg";
+                return (Name.Replace(" ", "") + ".svg").ToLower();
             }
         }
     }
-    
-
-
 }

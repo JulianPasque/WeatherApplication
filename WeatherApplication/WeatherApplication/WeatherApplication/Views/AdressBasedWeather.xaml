@@ -8,54 +8,68 @@
              ios:Page.UseSafeArea="true"
              Title="Adress search">
            
-    <ScrollView Orientation="Vertical">
-        <Grid RowSpacing="0">
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" >
+        <Grid RowSpacing="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Frame Grid.Row="0" 
+            
+            <SubViews:WeatherOverviewItem Grid.Row="1"
+                                          IsVisible="{Binding RequestSuccessfull}"/>
+            
+            
+              <Frame Grid.Row="0" 
                    Padding="0">
-                <Grid HeightRequest="15" 
-                      IsClippedToBounds="true">
-                        
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="5" />
-                            <ColumnDefinition Width="2*" />
-                            <ColumnDefinition Width="30" />
-                            <ColumnDefinition Width="3*" />
-                            <ColumnDefinition Width="5" />
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="15"/>
-                            <RowDefinition Height="45"/> 
-                            <RowDefinition Height="45"/> 
-                            <RowDefinition Height="45"/>
-                            <RowDefinition Height="45"/>
-                        </Grid.RowDefinitions>
+                
+                   <Grid HeightRequest="15"
+                         IsClippedToBounds="true"
+                         x:Name="Container"
+                         BackgroundColor="White">
                             
-                        <Label Grid.Row="1" Grid.Column="1"
-                               Text="Ländercode"
-                               Style="{StaticResource LabelFO}"/>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="3*" />
+                                <ColumnDefinition Width="5" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="15"/>
+                                <RowDefinition Height="45"/> 
+                                <RowDefinition Height="45"/> 
+                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="45"/>
+                            </Grid.RowDefinitions>
+                                
+                    
+                            <Label Grid.Row="1" Grid.Column="1"
+                                   Text="Ländercode"
+                                   Style="{StaticResource LabelFO}"/>
+                            
+                                  
                         
-                              
-                    
-                     <ffimageloadingsvg:SvgCachedImage Grid.Row="1" Grid.Column="3" HorizontalOptions="Start" Source="{Binding Country.Flag}"/>  
-                     <Label Grid.Row="1" Grid.Column="3"
-                               HorizontalOptions="End"
-                               Text="{Binding Country.Name}"          
-                               Style="{StaticResource LabelFO}"/>
-                    
-                    <BoxView VerticalOptions="Fill" HorizontalOptions="Fill" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" BackgroundColor="Transparent">
-                        <BoxView.GestureRecognizers>
-                                   <TapGestureRecognizer
-                                        Command="{Binding SelectCountry}"
-                                        NumberOfTapsRequired="1" />
-  
-                                </BoxView.GestureRecognizers>
+                         <ffimageloadingsvg:SvgCachedImage Grid.Row="1" 
+                                                           Grid.Column="3" 
+                                                           HorizontalOptions="Start" 
+                                                           Source="{Binding Country.Flag}"
+                                                           />  
                         
-                    </BoxView>      
-                    
+                         <Label Grid.Row="1" Grid.Column="3"
+                                HorizontalOptions="End"
+                                Text="{Binding Country.Name}"          
+                                Style="{StaticResource LabelFO}"/>
+                        
+                        <BoxView VerticalOptions="Fill" 
+                                 HorizontalOptions="Fill" 
+                                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" 
+                                 BackgroundColor="Transparent">
+                            <BoxView.GestureRecognizers>
+                                       <TapGestureRecognizer Command="{Binding SelectCountry}"
+                                                             NumberOfTapsRequired="1" />
+                            </BoxView.GestureRecognizers>
+                        </BoxView>      
+                        
                         <Label Grid.Row="2" Grid.Column="1"
                                Text="Stadt"          
                                Style="{StaticResource LabelFO}"/>
@@ -69,12 +83,20 @@
                                 Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
                                 Command="{Binding ReloadWeather}" 
                                 HorizontalOptions="Fill"/>
+                                
+                    
+                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0"
+                                                                 Grid.Column="0" Grid.ColumnSpan="5"
+                                                                 HorizontalOptions="Center"
+                                                                 x:Name="IconExpand"
+                                                                 Source="arrow.svg"/>  
 
-      
-                </Grid> 
+                    
+                           
+                    </Grid> 
                 
-              
-                
+                    
+                    
                 <Frame.GestureRecognizers>
                     <SwipeGestureRecognizer Direction="Down" 
                                             Swiped="Expand"/>
@@ -82,12 +104,6 @@
                                             Swiped="Collapse"/>
                 </Frame.GestureRecognizers>
             </Frame>
-            
-              
-            
-           
-            <SubViews:WeatherOverviewItem Grid.Row="1"
-                                          IsVisible="{Binding RequestSuccessfull}"/>
                                          
         </Grid>
     </ScrollView>  

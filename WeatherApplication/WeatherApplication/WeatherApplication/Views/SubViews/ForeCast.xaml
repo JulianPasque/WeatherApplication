@@ -2,7 +2,7 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApplication.Views.SubViews.ForeCast"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              >
     <Grid Margin="20,0" CompressedLayout.IsHeadless="true">
         <Grid.ColumnDefinitions>
@@ -13,10 +13,11 @@
         </Grid.ColumnDefinitions>
         <Label VerticalOptions="Center" FontSize="Medium" Grid.Column="0" x:Name="LblDate" HorizontalOptions="Start"/>
 
-        <ffimageloading:CachedImage Grid.Column="1" 
-                                    HorizontalOptions="Start" 
-                                    VerticalOptions="Center"
-                                    Source="cloudy.png"/>
+        <ffimageloadingsvg:SvgCachedImage Grid.Column="1" 
+                                          HorizontalOptions="Start" 
+                                          VerticalOptions="Center"
+                                          HeightRequest="50" WidthRequest="50"
+                                          Source="resource://WeatherApplication.Images.cloudy.svg"/>
                                    
         <Label  Grid.Column="2" Text="12°" FontSize="Medium" Opacity="0.65" VerticalOptions="Center" HorizontalOptions="Center"/>
         <Label  Grid.Column="3" Text="15°" FontSize="Medium" VerticalOptions="Center"  HorizontalOptions="Center"/>

@@ -13,7 +13,7 @@ public class Country
         {
             get
             {
-                return (Name.Replace(" ", "") + ".svg").ToLower();
+                return "resource://WeatherApplication.Images." + (Name.Replace(" ", "") + ".svg").ToLower();
             }
         }
     }

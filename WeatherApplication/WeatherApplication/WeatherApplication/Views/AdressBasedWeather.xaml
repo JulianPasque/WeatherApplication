@@ -5,6 +5,7 @@
              xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              ios:Page.UseSafeArea="true"
              Title="Adress search">
            
@@ -19,8 +20,8 @@
                                           IsVisible="{Binding RequestSuccessfull}"/>
             
             
-              <Frame Grid.Row="0" 
-                   Padding="0">
+              <Frame Grid.Row="0"
+                     Padding="0">
                 
                    <Grid HeightRequest="15"
                          IsClippedToBounds="true"
@@ -82,17 +83,18 @@
                         <Button Text="Wetter laden"
                                 Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
                                 Command="{Binding ReloadWeather}" 
-                                HorizontalOptions="Fill"/>
+                                HorizontalOptions="Fill"
+                                Style="{StaticResource Button}"/>
                                 
                     
-                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0"
-                                                                 Grid.Column="0" Grid.ColumnSpan="5"
-                                                                 HorizontalOptions="Center"
-                                                                 x:Name="IconExpand"
-                                                                 Source="arrow.svg"/>  
-
+                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0" 
+                                                          Grid.Column="0" Grid.ColumnSpan="5"
+                                                          HorizontalOptions="Center" 
+                                                          Source="resource://WeatherApplication.Images.arrow.svg"
+                                                          x:Name="IconExpand"
+                                                          /> 
                     
-                           
+             
                     </Grid> 
                 
                     

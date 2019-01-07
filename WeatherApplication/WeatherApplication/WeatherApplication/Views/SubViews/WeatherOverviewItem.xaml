@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WeatherApplication.Views.SubViews.WeatherOverviewItem"
              xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              >
 
@@ -32,8 +33,8 @@
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
     
-            <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.ColumnSpan="8" HeightRequest="1"/>
-                <BoxView BackgroundColor="Gray" Grid.Row="3" Grid.ColumnSpan="8" HeightRequest="1"/>
+            <BoxView Style="{StaticResource Seperator}" Grid.Row="1" Grid.ColumnSpan="8" />
+            <BoxView Style="{StaticResource Seperator}" Grid.Row="3" Grid.ColumnSpan="8" />
 
     <Label Grid.Row="0" FontSize="35" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding CityName}" HorizontalOptions="Start" VerticalOptions="Start"/>
     <Label Grid.Row="0" FontSize="35" Grid.Column="5" Grid.ColumnSpan="2" Text="{Binding CurrentTemp, StringFormat='{0:N2}°'}}" HorizontalOptions="End" VerticalOptions="Start"/>
@@ -47,11 +48,13 @@
             <Label
                 HorizontalOptions="Center"
                 Text="08:51"/>
-            <ffimageloading:CachedImage 
+            
+            <ffimageloadingsvg:SvgCachedImage HorizontalOptions="Center" 
+                                              VerticalOptions="Center"
+                                              HeightRequest="50" WidthRequest="50"
+                                              Source="resource://WeatherApplication.Images.sunrise.svg"/>  
                                   
-                                    HorizontalOptions="Center" 
-                                    VerticalOptions="Center"
-                                    Source="sunrise.png"/>
+                              
         </StackLayout>
             
     <!--  <SubViews:HourlyForecast ForecastTime="9:00"   Grid.Row="2" Grid.Column="2"/>  
@@ -63,11 +66,12 @@
             <Label 
                 HorizontalOptions="Center"
                 Text="15:51"/>
-            <ffimageloading:CachedImage 
-                                  
-                                    HorizontalOptions="Center" 
-                                    VerticalOptions="Center"
-                                    Source="sunset.png"/>
+            
+                <ffimageloadingsvg:SvgCachedImage HorizontalOptions="Center"
+                                                  HeightRequest="50" WidthRequest="50"
+                                                  VerticalOptions="Center"
+                                                  Source="resource://WeatherApplication.Images.sunset.svg"/>  
+          
         </StackLayout>
    
         

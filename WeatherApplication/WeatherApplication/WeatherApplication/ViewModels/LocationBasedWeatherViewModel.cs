@@ -36,6 +36,7 @@ namespace WeatherApplication.ViewModels
 
                 if (location != null)
                 {
+                    IsLoading = true;
                     LoadWeather (await WeatherAPI.GetCurrentWeatherForLocation(location.Latitude, location.Longitude), 
                                  await WeatherAPI.GetForecastForLocation(location.Latitude, location.Longitude));
 
@@ -58,6 +59,7 @@ namespace WeatherApplication.ViewModels
 
                 // Unable to get location
             }
+            IsLoading = false;
         }
 
     }

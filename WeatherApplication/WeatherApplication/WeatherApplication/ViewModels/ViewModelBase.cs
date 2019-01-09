@@ -3,6 +3,7 @@ using Prism.Mvvm;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using WeatherObjects;
 
@@ -44,11 +45,104 @@ namespace WeatherApplication.ViewModels
 
         public void LoadWeather(WeatherContainer weatherContainer, WeatherForecastContainer WeatherForecast)
         {
-            
             CityName = weatherContainer.name;
             CurrentTemp = weatherContainer.main.temp;
-            SunRise = UnixTimeStampToDateTime(weatherContainer.sys.sunrise);
-            SunSet = UnixTimeStampToDateTime(weatherContainer.sys.sunset);
+
+            int NextForecast = (((int)(DateTime.Now.Hour / 3) + 1) * 3);
+
+            DateTime Sunrise = UnixTimeStampToDateTime(weatherContainer.sys.sunrise);
+            DateTime Sunset = UnixTimeStampToDateTime(weatherContainer.sys.sunset);
+
+            List<ForecastObject> Forecasts = new List<ForecastObject>(6);
+
+            for (int i = 0; i < 6; ++i)
+            {
+                Forecasts.Add(new ForecastObject()
+                {
+                    Time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0).AddHours(NextForecast),
+                    Weather = WeatherObjects.Enums.Weather.Sunny,
+                    Temperatur= 3.9,
+                });
+                NextForecast = NextForecast + 3;
+
+            }
+            bool SunriseAdded = false;
+            bool SunsetAdded = false;
+
+            for (int i = 0; i < Forecasts.Count; ++i) {
+                var SunriseDif = (Sunrise - Forecasts[i].Time);
+                var SunsetDif = (Sunset - Forecasts[i].Time);
+                if (SunriseDif.Hours < 3 && SunriseDif.Hours > 0 && !SunriseAdded)
+                {
+                    SetNextHourlyForecast(new ForecastObject()
+                    {
+                        Time = Sunrise,
+                        Weather = WeatherObjects.Enums.Weather.Sunrise
+                    });
+                    SunriseAdded = true;
+                    i--;
+
+                }
+               
+
+                else if (SunsetDif < new TimeSpan(0,0,0) && SunsetDif.Hours > -3 && !SunsetAdded)
+                { 
+                    SetNextHourlyForecast(new ForecastObject()
+                    {
+                        Time = Sunset,
+                        Weather = WeatherObjects.Enums.Weather.Sunset
+                    });
+                    SunsetAdded = true;
+                    i--;
+                }
+                else
+                    SetNextHourlyForecast(Forecasts[i]);
+                }
+
+
+
+
+
+            //if (DateTime.Now < Sunrise)
+            //{
+            //    if()
+
+            //    HourlyForecast1 = new ForecastObject()
+            //    {
+            //        Time = Sunrise.TimeOfDay.ToString(@"hh\:mm"),
+            //        Weather = WeatherObjects.Enums.Weather.Sunrise
+            //    };
+            //}
+            //else
+            //{
+
+            //}
+
+
+            //HourlyForecast2 = new ForecastObject()
+            //{
+            //    Time = UnixTimeStampToDateTime(weatherContainer.sys.sunset).TimeOfDay.ToString(@"hh\:mm"),
+            //    Weather = WeatherObjects.Enums.Weather.Sunset
+            //};
+
+        }
+
+
+
+        private void SetNextHourlyForecast(ForecastObject forecast)
+        {
+            if (HourlyForecast1 == null)
+                HourlyForecast1 = forecast;
+            else if (HourlyForecast2 == null)
+                HourlyForecast2 = forecast;
+            else if (HourlyForecast3 == null)
+                HourlyForecast3 = forecast;
+            else if (HourlyForecast4 == null)
+                HourlyForecast4 = forecast;
+            else if (HourlyForecast5 == null)
+                HourlyForecast5 = forecast;
+            else if (HourlyForecast6 == null)
+                HourlyForecast6 = forecast;
         }
 
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
@@ -125,38 +219,119 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        private DateTime _SunRise;
-        public DateTime SunRise
+        ForecastObject _HourlyForecast1;
+
+        public ForecastObject HourlyForecast1
         {
             get
             {
-                return _SunRise;
+    
+                return _HourlyForecast1;
             }
             set
             {
-                if (_SunRise == value)
-                    return;
-                _SunRise = value;
-                RaisePropertyChanged(nameof(SunRise));
+                if(_HourlyForecast1 != value)
+                {
+                    _HourlyForecast1 = value;
+                    RaisePropertyChanged(nameof(HourlyForecast1));
+                }
             }
         }
 
-        private DateTime _SunSet;
-        public DateTime SunSet
+        ForecastObject _HourlyForecast2;
+
+        public ForecastObject HourlyForecast2
         {
             get
             {
-                return _SunSet;
+
+                return _HourlyForecast2;
             }
             set
             {
-                if (_SunSet == value)
-                    return;
-                _SunSet = value;
-                RaisePropertyChanged(nameof(SunSet));
+                if (_HourlyForecast2 != value)
+                {
+                    _HourlyForecast2 = value;
+                    RaisePropertyChanged(nameof(HourlyForecast2));
+                }
             }
         }
 
+        ForecastObject _HourlyForecast3;
+
+        public ForecastObject HourlyForecast3
+        {
+            get
+            {
+
+                return _HourlyForecast3;
+            }
+            set
+            {
+                if (_HourlyForecast3 != value)
+                {
+                    _HourlyForecast3 = value;
+                    RaisePropertyChanged(nameof(HourlyForecast3));
+                }
+            }
+        }
+
+        ForecastObject _HourlyForecast4;
+
+        public ForecastObject HourlyForecast4
+        {
+            get
+            {
+
+                return _HourlyForecast4;
+            }
+            set
+            {
+                if (_HourlyForecast4 != value)
+                {
+                    _HourlyForecast4 = value;
+                    RaisePropertyChanged(nameof(HourlyForecast4));
+                }
+            }
+        }
+
+        ForecastObject _HourlyForecast5;
+
+        public ForecastObject HourlyForecast5
+        {
+            get
+            {
+
+                return _HourlyForecast5;
+            }
+            set
+            {
+                if (_HourlyForecast5 != value)
+                {
+                    _HourlyForecast5 = value;
+                    RaisePropertyChanged(nameof(HourlyForecast5));
+                }
+            }
+        }
+
+        ForecastObject _HourlyForecast6;
+
+        public ForecastObject HourlyForecast6
+        {
+            get
+            {
+
+                return _HourlyForecast6;
+            }
+            set
+            {
+                if (_HourlyForecast6 != value)
+                {
+                    _HourlyForecast6 = value;
+                    RaisePropertyChanged(nameof(HourlyForecast6));
+                }
+            }
+        }
 
     }
 }

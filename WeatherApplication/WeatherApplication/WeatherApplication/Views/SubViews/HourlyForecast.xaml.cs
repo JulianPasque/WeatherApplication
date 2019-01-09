@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using WeatherApplication.Services;
 using WeatherObjects.Enums;
 using Xamarin.Forms;
@@ -14,9 +13,9 @@ namespace WeatherApplication.Views.SubViews
         }
 
 
-        public string ForecastTime
+        public DateTime ForecastTime
         {
-            get => (string)base.GetValue(ForecastTimeProperty);
+            get => (DateTime)base.GetValue(ForecastTimeProperty);
             set
             {
                 if (ForecastTime != value)
@@ -25,17 +24,18 @@ namespace WeatherApplication.Views.SubViews
         }
         public static readonly BindableProperty ForecastTimeProperty = BindableProperty.Create(
                 nameof(ForecastTime),
-                typeof(string),
+                typeof(DateTime),
                 typeof(ContentView),
-                string.Empty,
+                null,
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
-                    (bindable as HourlyForecast).LblTime.Text = newValue.ToString();
+                    if (newValue != null)
+                        (bindable as HourlyForecast).LblTime.Text = ((DateTime)newValue).ToString("hh:mm");
                 });
 
-        public string ForecastTemp
+        public double ForecastTemp
         {
-            get => (string)base.GetValue(ForecastTempProperty);
+            get => (double)base.GetValue(ForecastTempProperty);
             set
             {
                 if (ForecastTemp != value)
@@ -44,12 +44,12 @@ namespace WeatherApplication.Views.SubViews
         }
         public static readonly BindableProperty ForecastTempProperty = BindableProperty.Create(
                 nameof(ForecastTemp),
-                typeof(string),
+                typeof(double),
                 typeof(ContentView),
-                string.Empty,
+                0.0,
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
-                    (bindable as HourlyForecast).LblTemp.Text = newValue.ToString();
+                        (bindable as HourlyForecast).LblTemp.Text = newValue.ToString() + "°C";
                 });
 
         public Weather ForecastWeather
@@ -65,10 +65,11 @@ namespace WeatherApplication.Views.SubViews
                 nameof(ForecastWeather),
                 typeof(Weather),
                 typeof(ContentView),
-                string.Empty,
+                Weather.None,
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
-                    (bindable as HourlyForecast).ImgWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue);                });
+                    if (newValue != null)
+                        (bindable as HourlyForecast).ImgWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue);                });
     }
 
 

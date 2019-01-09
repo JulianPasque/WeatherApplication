@@ -1,6 +1,6 @@
 ﻿using System;
 using WeatherApplication.Services;
-using WeatherObjects.Enums;
+using WeatherObjects;
 using Xamarin.Forms;
 
 namespace WeatherApplication.Views.SubViews
@@ -30,7 +30,7 @@ namespace WeatherApplication.Views.SubViews
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
                     if (newValue != null)
-                        (bindable as HourlyForecast).LblTime.Text = ((DateTime)newValue).ToString("hh:mm");
+                        (bindable as HourlyForecast).LblTime.Text = ((DateTime)newValue).ToString("t");
                 });
 
         public double ForecastTemp
@@ -49,7 +49,7 @@ namespace WeatherApplication.Views.SubViews
                 0.0,
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
-                        (bindable as HourlyForecast).LblTemp.Text = newValue.ToString() + "°C";
+                        (bindable as HourlyForecast).LblTemp.Text = ((double)newValue).ToString("0.0") + "°C";
                 });
 
         public Weather ForecastWeather
@@ -65,11 +65,11 @@ namespace WeatherApplication.Views.SubViews
                 nameof(ForecastWeather),
                 typeof(Weather),
                 typeof(ContentView),
-                Weather.None,
+                null,
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
                     if (newValue != null)
-                        (bindable as HourlyForecast).ImgWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue);                });
+                        (bindable as HourlyForecast).ImgWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue); });
     }
 
 

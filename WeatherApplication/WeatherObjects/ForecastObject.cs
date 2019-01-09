@@ -39,8 +39,8 @@ namespace WeatherObjects
             }
         }
 
-        Enums.Weather _Weather;
-        public Enums.Weather Weather
+        Weather _Weather;
+        public Weather Weather
         {
             get
             {

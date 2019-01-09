@@ -48,7 +48,6 @@ namespace WeatherApplication.ViewModels
             CityName = weatherContainer.name;
             CurrentTemp = weatherContainer.main.temp;
 
-            int NextForecast = (((int)(DateTime.Now.Hour / 3) + 1) * 3);
 
             DateTime Sunrise = UnixTimeStampToDateTime(weatherContainer.sys.sunrise);
             DateTime Sunset = UnixTimeStampToDateTime(weatherContainer.sys.sunset);
@@ -59,25 +58,25 @@ namespace WeatherApplication.ViewModels
             {
                 Forecasts.Add(new ForecastObject()
                 {
-                    Time = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0).AddHours(NextForecast),
-                    Weather = WeatherObjects.Enums.Weather.Sunny,
-                    Temperatur= 3.9,
+                    Time = UnixTimeStampToDateTime(WeatherForecast.list[i].dt),//new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0).AddHours(NextForecast),
+                    Temperatur = WeatherForecast.list[i].main.temp,
+                    Weather = WeatherForecast.list[i].weather[0]
                 });
-                NextForecast = NextForecast + 3;
 
             }
             bool SunriseAdded = false;
             bool SunsetAdded = false;
 
+
             for (int i = 0; i < Forecasts.Count; ++i) {
                 var SunriseDif = (Sunrise - Forecasts[i].Time);
                 var SunsetDif = (Sunset - Forecasts[i].Time);
-                if (SunriseDif.Hours < 3 && SunriseDif.Hours > 0 && !SunriseAdded)
+                if (SunriseDif < new TimeSpan(0, 0, 0) && SunriseDif.Hours > -3 && !SunriseAdded)
                 {
                     SetNextHourlyForecast(new ForecastObject()
                     {
                         Time = Sunrise,
-                        Weather = WeatherObjects.Enums.Weather.Sunrise
+                        Weather = new Weather() { id = 900 }
                     });
                     SunriseAdded = true;
                     i--;
@@ -90,41 +89,17 @@ namespace WeatherApplication.ViewModels
                     SetNextHourlyForecast(new ForecastObject()
                     {
                         Time = Sunset,
-                        Weather = WeatherObjects.Enums.Weather.Sunset
+                        Weather = new Weather() { id = 901 }
                     });
                     SunsetAdded = true;
                     i--;
                 }
                 else
+                {
                     SetNextHourlyForecast(Forecasts[i]);
+
                 }
-
-
-
-
-
-            //if (DateTime.Now < Sunrise)
-            //{
-            //    if()
-
-            //    HourlyForecast1 = new ForecastObject()
-            //    {
-            //        Time = Sunrise.TimeOfDay.ToString(@"hh\:mm"),
-            //        Weather = WeatherObjects.Enums.Weather.Sunrise
-            //    };
-            //}
-            //else
-            //{
-
-            //}
-
-
-            //HourlyForecast2 = new ForecastObject()
-            //{
-            //    Time = UnixTimeStampToDateTime(weatherContainer.sys.sunset).TimeOfDay.ToString(@"hh\:mm"),
-            //    Weather = WeatherObjects.Enums.Weather.Sunset
-            //};
-
+            }
         }
 
 
@@ -166,6 +141,22 @@ namespace WeatherApplication.ViewModels
                     return;
                 _RequestSuccessfull = value;
                 RaisePropertyChanged(nameof(RequestSuccessfull));
+            }
+        }
+
+        bool _IsLoading;
+        public bool IsLoading
+        {
+            get
+            {
+                return _IsLoading;
+            }
+            set
+            {
+                if (_IsLoading == value)
+                    return;
+                _IsLoading = value;
+                RaisePropertyChanged(nameof(IsLoading));
             }
         }
 

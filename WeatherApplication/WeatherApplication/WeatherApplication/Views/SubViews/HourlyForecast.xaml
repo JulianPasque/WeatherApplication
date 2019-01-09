@@ -3,21 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WeatherApplication.Views.SubViews.HourlyForecast"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms">
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             CompressedLayout.IsHeadless="true">
              
     <StackLayout Orientation="Vertical"
                  CompressedLayout.IsHeadless="true">
         
         <Label x:Name="LblTime"
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               VerticalOptions="StartAndExpand"
+               FontSize="Small"/>
       
         <ffimageloadingsvg:SvgCachedImage x:Name="ImgWeather"
                                            HorizontalOptions="Center" 
-                                           VerticalOptions="Center"
+                                           VerticalOptions="StartAndExpand"
                                            HeightRequest="40" WidthRequest="40"/>  
           
         <Label x:Name="LblTemp" 
-               HorizontalOptions="Center"/>
+               HorizontalOptions="Center"
+               FontSize="Small"/>
 
     </StackLayout>
 </ContentView>

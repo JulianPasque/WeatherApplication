@@ -13,15 +13,26 @@
         <Grid RowSpacing="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             
-            <SubViews:WeatherOverviewItem Grid.Row="1"
+            <SubViews:WeatherOverviewItem Grid.Row="2"
                                           IsVisible="{Binding RequestSuccessfull}"/>
             
             
+            <StackLayout Grid.Row="1" Orientation="Vertical" IsVisible="{Binding IsLoading}">
+                
+                <ActivityIndicator HorizontalOptions="Center" IsRunning="{Binding IsLoading}" />
+                <Label Text="Loading Weather" HorizontalOptions="Center" FontSize="Large"/>
+                
+            </StackLayout>
+            
+            
+            
               <Frame Grid.Row="0"
-                     Padding="0">
+                     Padding="0"
+                     x:Name="FrameBorder">
                 
                    <Grid HeightRequest="15"
                          IsClippedToBounds="true"
@@ -92,7 +103,12 @@
                                                           HorizontalOptions="Center" 
                                                           Source="resource://WeatherApplication.Images.arrow.svg"
                                                           x:Name="IconExpand"
-                                                          /> 
+                                                          >
+                        
+                                <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="BtnExpand"/>
+                                </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
+                        </ffimageloadingsvg:SvgCachedImage>
                     
              
                     </Grid> 
@@ -101,9 +117,9 @@
                     
                 <Frame.GestureRecognizers>
                     <SwipeGestureRecognizer Direction="Down" 
-                                            Swiped="Expand"/>
+                                            Swiped="Handle_Swiped"/>
                     <SwipeGestureRecognizer Direction="Up" 
-                                            Swiped="Collapse"/>
+                                            Swiped="Handle_Swiped"/>
                 </Frame.GestureRecognizers>
             </Frame>
                                          

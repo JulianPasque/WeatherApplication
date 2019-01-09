@@ -8,56 +8,53 @@
              >
 
 
-    <Grid Padding="0,10">
+    <Grid Padding="0,10" ColumnSpacing="5">
         
        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="65"/>
             <RowDefinition Height="1"/>
-            <RowDefinition Height="83"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="1"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
     
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>          
             <ColumnDefinition Width="*"/>          
             <ColumnDefinition Width="*"/>          
             <ColumnDefinition Width="*"/>          
             <ColumnDefinition Width="*"/>          
-            <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
     
             
-    <Label Grid.Row="0" FontSize="35" Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding CityName}" HorizontalOptions="Start" VerticalOptions="Start"/>
-    <Label Grid.Row="0" FontSize="35" Grid.Column="5" Grid.ColumnSpan="2" Text="{Binding CurrentTemp, StringFormat='{0:N2}°'}}" HorizontalOptions="End" VerticalOptions="Start"/>
-   
+    <Label Margin="10,0,0,0" Grid.Row="0" FontSize="35" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding CityName}" HorizontalOptions="Start" VerticalOptions="Center"/>
+    <Label Margin="0,0,10,0" Grid.Row="0" FontSize="35" Grid.Column="4" Grid.ColumnSpan="2" Text="{Binding CurrentTemp, StringFormat='{0:N2}°'}}" HorizontalOptions="End" VerticalOptions="Center"/>
 
         
 
-      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast1.Weather}" ForecastTime="{Binding HourlyForecast1.Time}" ForecastTemp="{Binding HourlyForecast1.Temperatur}" Grid.Row="2" Grid.Column="1"/>  
-      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast2.Weather}" ForecastTime="{Binding HourlyForecast2.Time}" ForecastTemp="{Binding HourlyForecast2.Temperatur}" Grid.Row="2" Grid.Column="2"/>  
-      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast3.Weather}" ForecastTime="{Binding HourlyForecast3.Time}" ForecastTemp="{Binding HourlyForecast3.Temperatur}" Grid.Row="2" Grid.Column="3"/>  
-      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast4.Weather}" ForecastTime="{Binding HourlyForecast4.Time}" ForecastTemp="{Binding HourlyForecast4.Temperatur}" Grid.Row="2" Grid.Column="4"/>  
-      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast5.Weather}" ForecastTime="{Binding HourlyForecast5.Time}" ForecastTemp="{Binding HourlyForecast5.Temperatur}" Grid.Row="2" Grid.Column="5"/>  
-      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast6.Weather}" ForecastTime="{Binding HourlyForecast6.Time}" ForecastTemp="{Binding HourlyForecast6.Temperatur}" Grid.Row="2" Grid.Column="6"/>  
+      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast1.Weather}" ForecastTime="{Binding HourlyForecast1.Time}" ForecastTemp="{Binding HourlyForecast1.Temperatur}" Grid.Row="2" Grid.Column="0" VerticalOptions="Center"/>  
+      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast2.Weather}" ForecastTime="{Binding HourlyForecast2.Time}" ForecastTemp="{Binding HourlyForecast2.Temperatur}" Grid.Row="2" Grid.Column="1" VerticalOptions="Center"/>  
+      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast3.Weather}" ForecastTime="{Binding HourlyForecast3.Time}" ForecastTemp="{Binding HourlyForecast3.Temperatur}" Grid.Row="2" Grid.Column="2" VerticalOptions="Center"/>  
+      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast4.Weather}" ForecastTime="{Binding HourlyForecast4.Time}" ForecastTemp="{Binding HourlyForecast4.Temperatur}" Grid.Row="2" Grid.Column="3" VerticalOptions="Center"/>  
+      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast5.Weather}" ForecastTime="{Binding HourlyForecast5.Time}" ForecastTemp="{Binding HourlyForecast5.Temperatur}" Grid.Row="2" Grid.Column="4" VerticalOptions="Center"/>  
+      <SubViews:HourlyForecast ForecastWeather="{Binding HourlyForecast6.Weather}" ForecastTime="{Binding HourlyForecast6.Time}" ForecastTemp="{Binding HourlyForecast6.Temperatur}" Grid.Row="2" Grid.Column="5" VerticalOptions="Center"/>  
           
     
        
         
-      <SubViews:ForeCast ForecastDate="Freitag 28.12" Grid.Row="4"  Grid.Column="1" Grid.ColumnSpan="6"/>  
-      <SubViews:ForeCast ForecastDate="Samstag 29.12" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6"/>  
-      <SubViews:ForeCast ForecastDate="Sonntag 30.12" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6"/>  
-      <SubViews:ForeCast ForecastDate="Montag 31.12" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="6"/>      
+      <SubViews:ForeCast ForecastDate="Freitag 28.12" Grid.Row="4"  Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast ForecastDate="Samstag 29.12" Grid.Row="5" Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast ForecastDate="Sonntag 30.12" Grid.Row="6"  Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast ForecastDate="Montag 31.12" Grid.Row="7" Grid.ColumnSpan="6"/>      
         
         
-        <BoxView Style="{StaticResource Seperator}" Grid.Row="1" Grid.ColumnSpan="8" />
-        <BoxView Style="{StaticResource Seperator}" Grid.Row="3" Grid.ColumnSpan="8" />
+        <BoxView Style="{StaticResource Seperator}" Grid.Row="1" Grid.ColumnSpan="6" />
+        <BoxView Style="{StaticResource Seperator}" Grid.Row="3" Grid.ColumnSpan="6" />
 
         
     </Grid>

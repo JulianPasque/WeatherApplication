@@ -97,6 +97,7 @@ namespace WeatherApplication.ViewModels
 
         public async void LoadWeather()
         {
+            IsLoading = true;
             try
             {
                 LoadWeather(await WeatherAPI.GetCurrentWeatherForCity(City, Country.CountryCode),
@@ -108,7 +109,7 @@ namespace WeatherApplication.ViewModels
             {
                 RequestSuccessfull = false;
             }
-
+            IsLoading = false;
         }
 
     }

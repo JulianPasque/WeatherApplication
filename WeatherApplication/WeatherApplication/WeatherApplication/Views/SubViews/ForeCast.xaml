@@ -4,14 +4,14 @@
              x:Class="WeatherApplication.Views.SubViews.ForeCast"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              >
-    <Grid Margin="20,0" CompressedLayout.IsHeadless="true">
+    <Grid Margin="15,0" Padding="0,5" CompressedLayout.IsHeadless="true">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="40"/>
         </Grid.ColumnDefinitions>
-        <Label VerticalOptions="Center" FontSize="Medium" Grid.Column="0" x:Name="LblDate" HorizontalOptions="Start"/>
+        <Label VerticalOptions="Center" FontSize="Large" Grid.Column="0" x:Name="LblDate" HorizontalOptions="Start"/>
 
         <ffimageloadingsvg:SvgCachedImage Grid.Column="1" 
                                           HorizontalOptions="Start" 

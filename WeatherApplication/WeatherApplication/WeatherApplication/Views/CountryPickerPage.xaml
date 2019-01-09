@@ -16,6 +16,9 @@
                                       Command="{Binding ItemTappedCommand}"
                                       EventArgsParameterPath="Item" />
         </ListView.Behaviors>
+            <ListView.Header>
+                <SearchBar Placeholder="Country to search for" HorizontalOptions="Fill"/>
+            </ListView.Header>
  
             <ListView.ItemTemplate>
         <DataTemplate>

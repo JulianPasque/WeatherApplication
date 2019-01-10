@@ -1,5 +1,4 @@
-﻿using System;
-using WeatherObjects;
+﻿using WeatherObjects;
 
 namespace WeatherApplication.Services
 {

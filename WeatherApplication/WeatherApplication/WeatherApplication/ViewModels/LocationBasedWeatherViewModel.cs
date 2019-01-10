@@ -1,8 +1,6 @@
 ﻿using System;
 using Prism;
-using Prism.Mvvm;
 using WeatherApplication.Services.API;
-using WeatherObjects;
 using Xamarin.Essentials;
 
 namespace WeatherApplication.ViewModels

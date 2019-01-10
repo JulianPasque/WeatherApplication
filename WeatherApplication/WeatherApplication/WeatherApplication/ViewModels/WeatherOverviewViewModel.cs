@@ -1,9 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using Prism;
-using Prism.Navigation;
-using WeatherApplication.Services.API;
-using WeatherObjects;
+﻿using Prism.Navigation;
 
 namespace WeatherApplication.ViewModels
 {

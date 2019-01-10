@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="WeatherApplication.Views.CountryPickerPage"
-             xmlns:local="clr-namespace:WeatherApplication.Services"
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              ios:Page.UseSafeArea="true"
@@ -11,14 +10,21 @@
     <ContentPage.Content>
         
 
-             <ListView RowHeight="50" ItemsSource="{Binding Source={x:Static local:CountryCollection.Countries}}">
+             <ListView RowHeight="50" ItemsSource="{Binding Countries}">
         <ListView.Behaviors>
             <b:EventToCommandBehavior EventName="ItemTapped" 
                                       Command="{Binding ItemTappedCommand}"
                                       EventArgsParameterPath="Item" />
         </ListView.Behaviors>
             <ListView.Header>
-                <SearchBar Placeholder="Country to search for" HorizontalOptions="Fill"/>
+                <SearchBar Placeholder="Country to search for" Text="{Binding Text}" SearchCommand="{Binding SearchCommand}" HorizontalOptions="Fill">
+                    <SearchBar.Behaviors>
+                    <b:EventToCommandBehavior EventName="TextChanged" 
+                                              Command="{Binding SearchCommand}"
+                                               />
+                </SearchBar.Behaviors>
+                    </SearchBar>
+            
             </ListView.Header>
  
             <ListView.ItemTemplate>

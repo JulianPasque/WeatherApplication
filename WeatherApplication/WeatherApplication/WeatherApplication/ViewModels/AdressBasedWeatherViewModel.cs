@@ -4,6 +4,7 @@ using Prism.Commands;
 using Prism.Navigation;
 using WeatherApplication.Services.API;
 using WeatherObjects;
+using Xamarin.Essentials;
 
 namespace WeatherApplication.ViewModels
 {
@@ -98,6 +99,13 @@ namespace WeatherApplication.ViewModels
         public async void LoadWeather()
         {
             IsLoading = true;
+
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                ErrorMessage = "Internet required";
+                IsLoading = false;
+                return;
+            }
             try
             {
                 LoadWeather(await WeatherAPI.GetCurrentWeatherForCity(City, Country.CountryCode),

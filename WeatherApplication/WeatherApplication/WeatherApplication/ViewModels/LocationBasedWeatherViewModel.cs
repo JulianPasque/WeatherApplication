@@ -30,13 +30,21 @@ namespace WeatherApplication.ViewModels
 
         public async void LoadLocation()
         {
+            IsLoading = true;
+
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                ErrorMessage = "Internet required";
+                IsLoading = false;
+                return;
+            }
+
             try
             {
                 var location = await Geolocation.GetLastKnownLocationAsync();
 
                 if (location != null)
                 {
-                    IsLoading = true;
                     LoadWeather (await WeatherAPI.GetCurrentWeatherForLocation(location.Latitude, location.Longitude), 
                                  await WeatherAPI.GetForecastForLocation(location.Latitude, location.Longitude));
                     RequestSuccessfull = true;

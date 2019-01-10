@@ -4,9 +4,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="WeatherApplication.Views.LocationBasedWeather"
     xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
+    xmlns:Converter="clr-namespace:WeatherApplication.Views.Converter"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
     ios:Page.UseSafeArea="true"
     Title="Aktueller Ort">
+    ContentPage.Resources>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:InverseBooleanConverter x:Key="InverseBoolean" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 <Grid>
         <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -19,7 +26,11 @@
         <Label Text="Loading Weather" HorizontalOptions="Center" FontSize="Large"/>
         
     </StackLayout>
-    <SubViews:WeatherOverviewItem Grid.Row="1"/>
+        
+        
+    <SubViews:WeatherOverviewItem Grid.Row="1" IsVisible="{Binding RequestSuccessfull}"/>
+        
+        <Label Grid.Row="1" Text="{Binding ErrorMessage}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding RequestSuccessfull, Converter={StaticResource InverseBoolean}}"/>
        </Grid>
  
 </ContentPage>

@@ -4,11 +4,18 @@
              x:Class="WeatherApplication.Views.AdressBasedWeather"
              xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:Converter="clr-namespace:WeatherApplication.Views.Converter"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              ios:Page.UseSafeArea="true"
-             Title="Adress search">
-           
+             Title="Adress search"
+             Padding="0,0,0,10">
+           <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converter:InverseBooleanConverter x:Key="InverseBoolean" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" >
         <Grid RowSpacing="0" >
             <Grid.RowDefinitions>
@@ -20,7 +27,8 @@
             <SubViews:WeatherOverviewItem Grid.Row="2"
                                           IsVisible="{Binding RequestSuccessfull}"/>
             
-            
+              <Label Grid.Row="2" Text="{Binding ErrorMessage}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding RequestSuccessfull, Converter={StaticResource InverseBoolean}}"/>
+
             <StackLayout Grid.Row="1" Orientation="Vertical" IsVisible="{Binding IsLoading}">
                 
                 <ActivityIndicator HorizontalOptions="Center" IsRunning="{Binding IsLoading}" />
@@ -107,6 +115,10 @@
                         
                                 <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="BtnExpand"/>
+                                    <SwipeGestureRecognizer Direction="Down" 
+                                        Swiped="Handle_Swiped"/>
+                                    <SwipeGestureRecognizer Direction="Up" 
+                                        Swiped="Handle_Swiped"/>
                                 </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
                         </ffimageloadingsvg:SvgCachedImage>
                     

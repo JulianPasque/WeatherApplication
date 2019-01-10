@@ -39,23 +39,31 @@ namespace WeatherApplication.ViewModels
                     IsLoading = true;
                     LoadWeather (await WeatherAPI.GetCurrentWeatherForLocation(location.Latitude, location.Longitude), 
                                  await WeatherAPI.GetForecastForLocation(location.Latitude, location.Longitude));
-
+                    RequestSuccessfull = true;
                 }
             }
-            catch (FeatureNotSupportedException fnsEx)
+            catch (FeatureNotSupportedException ex)
             {
                 Console.WriteLine("GPS Not supported");
+                ErrorMessage = "GPS Not supported";
+                RequestSuccessfull = false;
                 // Handle not supported on device exception
             }
-            catch (PermissionException pEx)
+            catch (PermissionException ex)
             {
+                ErrorMessage = "Permission denied";
+
                 Console.WriteLine("Permission denied");
+                RequestSuccessfull = false;
 
                 // Handle permission exception
             }
             catch (Exception ex)
             {
+                ErrorMessage = "GPS Error: " + ex.Message;
+
                 Console.WriteLine("GPS Error: " + ex.Message );
+                RequestSuccessfull = false;
 
                 // Unable to get location
             }

@@ -32,7 +32,7 @@ namespace WeatherApplication.ViewModels
 
         }
 
-        Country _Country = new Country() { Name = "United Kingdom", CountryCode = "GB" };
+        Country _Country = new Country() { Name = "Germany", CountryCode = "De" };
 
         public Country Country 
         {
@@ -49,7 +49,7 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        string _City = "London";
+        string _City = "Köln";
 
         public string City 
         {
@@ -107,6 +107,7 @@ namespace WeatherApplication.ViewModels
             }
             catch (Exception e)
             {
+                ErrorMessage = "Land und Stadtkombination prüfen";
                 RequestSuccessfull = false;
             }
             IsLoading = false;

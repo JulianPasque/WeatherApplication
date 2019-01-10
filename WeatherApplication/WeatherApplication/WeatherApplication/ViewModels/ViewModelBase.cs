@@ -179,6 +179,23 @@ namespace WeatherApplication.ViewModels
             }
         }
 
+        string _ErrorMessage;
+        public string ErrorMessage
+        {
+            get
+            {
+                return _ErrorMessage;
+            }
+            set
+            {
+                if (_ErrorMessage == value)
+                    return;
+                _ErrorMessage = value;
+                RaisePropertyChanged(nameof(ErrorMessage));
+            }
+        }
+
+
         bool _IsLoading;
         public bool IsLoading
         {

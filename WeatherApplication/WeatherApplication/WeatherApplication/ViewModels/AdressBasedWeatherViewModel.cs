@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using Prism;
 using Prism.Commands;
 using Prism.Navigation;
@@ -33,36 +34,29 @@ namespace WeatherApplication.ViewModels
 
         }
 
-        Country _Country = new Country() { Name = "Germany", CountryCode = "De" };
-
-        public Country Country 
+       
+        public Country Country
         {
             get
             {
-                return _Country;
+                return JsonConvert.DeserializeObject<Country>(Preferences.Get("Country", JsonConvert.SerializeObject(new Country() { Name = "Germany", CountryCode = "De" })));
             }
             set
             {
-                if (_Country == value)
-                    return;
-                _Country = value;
+                Preferences.Set("Country", JsonConvert.SerializeObject(value));
                 RaisePropertyChanged(nameof(Country));
             }
         }
 
-        string _City = "Köln";
 
-        public string City 
+        public string City
         {
             get
             {
-                return _City;
+                return Preferences.Get("City", "Köln");
             }
-            set
-            {
-                if (_City == value)
-                    return;
-                _City = value;
+            set {
+                Preferences.Set("City", value);
                 RaisePropertyChanged(nameof(City));
 
             }

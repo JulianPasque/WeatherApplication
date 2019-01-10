@@ -32,6 +32,7 @@
     <Folder Include="Services\API\" />
     <Folder Include="Views\SubViews\" />
     <Folder Include="Images\" />
+    <Folder Include="Views\Converter\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\WeatherObjects\WeatherObjects.csproj" />

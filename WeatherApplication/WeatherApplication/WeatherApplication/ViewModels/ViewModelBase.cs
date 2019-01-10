@@ -108,9 +108,7 @@ namespace WeatherApplication.ViewModels
             for(int ahead = 1; ahead < 5; ++ahead)
             {
                 var List = WeatherForecast.list.Where(x => UnixTimeStampToDateTime(x.dt).Date == DateTime.Now.AddDays(ahead).Date).ToList();
-                Debug.WriteLine(List.Count);
-                foreach (WeatherContainer c in List)
-                    Debug.WriteLine(c.main.temp_min + "  " + c.main.temp_max);
+
                 SetNextDailyForecast(new ForecastObject
                 {
                     MinTemperatur = List.Min(x => x.main.temp_min),
@@ -194,6 +192,8 @@ namespace WeatherApplication.ViewModels
                 RaisePropertyChanged(nameof(ErrorMessage));
             }
         }
+
+        public DateTime LastRequestTime = new DateTime(1970,1,1);
 
 
         bool _IsLoading;

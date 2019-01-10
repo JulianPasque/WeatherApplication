@@ -98,7 +98,12 @@ namespace WeatherApplication.ViewModels
 
         public async void LoadWeather()
         {
+
+            if ((DateTime.Now -LastRequestTime).TotalMinutes < 10)
+                return;
             IsLoading = true;
+
+
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
@@ -111,6 +116,7 @@ namespace WeatherApplication.ViewModels
                 LoadWeather(await WeatherAPI.GetCurrentWeatherForCity(City, Country.CountryCode),
                             await WeatherAPI.GetForecastForCity(City, Country.CountryCode));
                 RequestSuccessfull = true;
+                LastRequestTime = DateTime.Now;
 
             }
             catch (Exception e)

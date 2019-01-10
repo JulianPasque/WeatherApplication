@@ -38,6 +38,39 @@ namespace WeatherObjects
                 }
             }
         }
+        double _MinTemperatur;
+        public double MinTemperatur
+        {
+            get
+            {
+                return _MinTemperatur;
+            }
+            set
+            {
+                if (_MinTemperatur != value)
+                {
+                    _MinTemperatur = value;
+                    OnPropertyChanged(nameof(MinTemperatur));
+                }
+            }
+        }
+
+        double _MaxTemperatur;
+        public double MaxTemperatur
+        {
+            get
+            {
+                return _MaxTemperatur;
+            }
+            set
+            {
+                if (_MaxTemperatur != value)
+                {
+                    _MaxTemperatur = value;
+                    OnPropertyChanged(nameof(MaxTemperatur));
+                }
+            }
+        }
 
         Weather _Weather;
         public Weather Weather

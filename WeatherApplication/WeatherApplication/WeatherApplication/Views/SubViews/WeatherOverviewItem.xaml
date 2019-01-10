@@ -20,6 +20,7 @@
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
             <RowDefinition Height="55"/>
+            <RowDefinition Height="55"/>
         </Grid.RowDefinitions>
     
         <Grid.ColumnDefinitions>
@@ -46,11 +47,12 @@
           
     
        
-        
-      <SubViews:ForeCast ForecastDate="Freitag 28.12" Grid.Row="4"  Grid.ColumnSpan="6"/>  
-      <SubViews:ForeCast ForecastDate="Samstag 29.12" Grid.Row="5" Grid.ColumnSpan="6"/>  
-      <SubViews:ForeCast ForecastDate="Sonntag 30.12" Grid.Row="6"  Grid.ColumnSpan="6"/>  
-      <SubViews:ForeCast ForecastDate="Montag 31.12" Grid.Row="7" Grid.ColumnSpan="6"/>      
+       
+      <SubViews:ForeCast MinTemp="{Binding DailyForecast1.MinTemperatur}" ForecastWeather="{Binding DailyForecast1.Weather}" MaxTemp="{Binding DailyForecast1.MaxTemperatur}" ForecastTime="{Binding DailyForecast1.Time}" Grid.Row="4"  Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast MinTemp="{Binding DailyForecast2.MinTemperatur}" ForecastWeather="{Binding DailyForecast2.Weather}" MaxTemp="{Binding DailyForecast2.MaxTemperatur}" ForecastTime="{Binding DailyForecast2.Time}" Grid.Row="5" Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast MinTemp="{Binding DailyForecast3.MinTemperatur}" ForecastWeather="{Binding DailyForecast3.Weather}" MaxTemp="{Binding DailyForecast3.MaxTemperatur}" ForecastTime="{Binding DailyForecast3.Time}" Grid.Row="6"  Grid.ColumnSpan="6"/>  
+      <SubViews:ForeCast MinTemp="{Binding DailyForecast4.MinTemperatur}" ForecastWeather="{Binding DailyForecast4.Weather}" MaxTemp="{Binding DailyForecast4.MaxTemperatur}" ForecastTime="{Binding DailyForecast4.Time}" Grid.Row="7" Grid.ColumnSpan="6"/>      
+      <SubViews:ForeCast MinTemp="{Binding DailyForecast5.MinTemperatur}" ForecastWeather="{Binding DailyForecast5.Weather}" MaxTemp="{Binding DailyForecast5.MaxTemperatur}" ForecastTime="{Binding DailyForecast5.Time}" Grid.Row="8" Grid.ColumnSpan="6"/>      
         
         
         <BoxView Style="{StaticResource Seperator}" Grid.Row="1" Grid.ColumnSpan="6" />

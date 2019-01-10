@@ -4,6 +4,8 @@ using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using WeatherObjects;
 
@@ -100,6 +102,24 @@ namespace WeatherApplication.ViewModels
 
                 }
             }
+
+
+
+            for(int ahead = 1; ahead < 5; ++ahead)
+            {
+                var List = WeatherForecast.list.Where(x => UnixTimeStampToDateTime(x.dt).Date == DateTime.Now.AddDays(ahead).Date).ToList();
+                Debug.WriteLine(List.Count);
+                foreach (WeatherContainer c in List)
+                    Debug.WriteLine(c.main.temp_min + "  " + c.main.temp_max);
+                SetNextDailyForecast(new ForecastObject
+                {
+                    MinTemperatur = List.Min(x => x.main.temp_min),
+                    MaxTemperatur = List.Max(x => x.main.temp_max),
+                    Time = DateTime.Now.AddDays(ahead),
+                    Weather = List.Where(x => UnixTimeStampToDateTime(x.dt).TimeOfDay >= new TimeSpan(11, 0, 0) && UnixTimeStampToDateTime(x.dt).TimeOfDay < new TimeSpan(14, 0, 0)).First().weather[0]
+                });
+
+            }
         }
 
 
@@ -118,6 +138,21 @@ namespace WeatherApplication.ViewModels
                 HourlyForecast5 = forecast;
             else if (HourlyForecast6 == null)
                 HourlyForecast6 = forecast;
+        }
+
+        private void SetNextDailyForecast(ForecastObject forecast)
+        {
+            if (DailyForecast1 == null)
+                DailyForecast1 = forecast;
+            else if (DailyForecast2 == null)
+                DailyForecast2 = forecast;
+            else if (DailyForecast3 == null)
+                DailyForecast3 = forecast;
+            else if (DailyForecast4 == null)
+                DailyForecast4 = forecast;
+            else if (DailyForecast5 == null)
+                DailyForecast5 = forecast;
+
         }
 
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
@@ -320,6 +355,104 @@ namespace WeatherApplication.ViewModels
                 {
                     _HourlyForecast6 = value;
                     RaisePropertyChanged(nameof(HourlyForecast6));
+                }
+            }
+        }
+
+
+        ForecastObject _DailyForecast1;
+
+        public ForecastObject DailyForecast1
+        {
+            get
+            {
+
+                return _DailyForecast1;
+            }
+            set
+            {
+                if (_DailyForecast1 != value)
+                {
+                    _DailyForecast1 = value;
+                    RaisePropertyChanged(nameof(DailyForecast1));
+                }
+            }
+        }
+
+        ForecastObject _DailyForecast2;
+
+        public ForecastObject DailyForecast2
+        {
+            get
+            {
+
+                return _DailyForecast2;
+            }
+            set
+            {
+                if (_DailyForecast2 != value)
+                {
+                    _DailyForecast2 = value;
+                    RaisePropertyChanged(nameof(DailyForecast2));
+                }
+            }
+        }
+
+
+        ForecastObject _DailyForecast3;
+
+        public ForecastObject DailyForecast3
+        {
+            get
+            {
+
+                return _DailyForecast3;
+            }
+            set
+            {
+                if (_DailyForecast3 != value)
+                {
+                    _DailyForecast3 = value;
+                    RaisePropertyChanged(nameof(DailyForecast3));
+                }
+            }
+        }
+
+
+        ForecastObject _DailyForecast4;
+
+        public ForecastObject DailyForecast4
+        {
+            get
+            {
+
+                return _DailyForecast4;
+            }
+            set
+            {
+                if (_DailyForecast4 != value)
+                {
+                    _DailyForecast4 = value;
+                    RaisePropertyChanged(nameof(DailyForecast4));
+                }
+            }
+        }
+
+        ForecastObject _DailyForecast5;
+
+        public ForecastObject DailyForecast5
+        {
+            get
+            {
+
+                return _DailyForecast5;
+            }
+            set
+            {
+                if (_DailyForecast5 != value)
+                {
+                    _DailyForecast5 = value;
+                    RaisePropertyChanged(nameof(DailyForecast5));
                 }
             }
         }

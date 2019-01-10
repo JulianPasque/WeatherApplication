@@ -34,7 +34,7 @@ namespace WeatherApplication.ViewModels
 
         }
 
-       
+
         public Country Country
         {
             get
@@ -55,7 +55,8 @@ namespace WeatherApplication.ViewModels
             {
                 return Preferences.Get("City", "Köln");
             }
-            set {
+            set
+            {
                 Preferences.Set("City", value);
                 RaisePropertyChanged(nameof(City));
 
@@ -93,7 +94,7 @@ namespace WeatherApplication.ViewModels
         public async void LoadWeather()
         {
 
-            if ((DateTime.Now -LastRequestTime).TotalMinutes < 10)
+            if ((DateTime.Now - LastRequestTime).TotalMinutes < 10)
                 return;
             IsLoading = true;
 

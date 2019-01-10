@@ -9,8 +9,6 @@ namespace WeatherApplication.Services
         public static List<Country> Countries = new List<Country>()
         {
 
-
-
 //new Country(){Name = "Afghanistan", CountryCode = "AF" },
 //new Country(){Name = "Ã…land Islands", CountryCode = "AX" },
 new Country(){Name = "Albania", CountryCode = "AL" },

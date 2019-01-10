@@ -23,7 +23,7 @@ namespace WeatherApplication.Services
                 return FilePrefix + "sunset.svg";
 
             //Rain 
-            if (Weather.id >= 500 && Weather.id < 600 || Weather.id >= 300 && Weather.id < 400) 
+            if (Weather.id >= 500 && Weather.id < 600 || Weather.id >= 300 && Weather.id < 400)
             {
                 if (Weather.icon[2] == 'd')
                     return FilePrefix + "rainday.svg";
@@ -34,11 +34,11 @@ namespace WeatherApplication.Services
             //Snow 
             if (Weather.id >= 600 && Weather.id < 700)
             {
-                    return FilePrefix + "snow.svg";
+                return FilePrefix + "snow.svg";
             }
 
             //Clouds
-            if (Weather.id >= 801 && Weather.id < 900) 
+            if (Weather.id >= 801 && Weather.id < 900)
             {
                 if (Weather.icon[2] == 'd')
                     return FilePrefix + "cloudday.svg";

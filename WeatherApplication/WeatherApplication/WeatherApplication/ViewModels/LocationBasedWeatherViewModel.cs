@@ -14,12 +14,13 @@ namespace WeatherApplication.ViewModels
         public bool IsActive
         {
             get { return _isActive; }
-            set { 
-            SetProperty(ref _isActive, value, RaiseIsActiveChanged);
+            set
+            {
+                SetProperty(ref _isActive, value, RaiseIsActiveChanged);
                 if (value)
                     LoadLocation();
             }
-            }
+        }
 
         protected virtual void RaiseIsActiveChanged()
         {
@@ -46,7 +47,7 @@ namespace WeatherApplication.ViewModels
 
                 if (location != null)
                 {
-                    LoadWeather (await WeatherAPI.GetCurrentWeatherForLocation(location.Latitude, location.Longitude), 
+                    LoadWeather(await WeatherAPI.GetCurrentWeatherForLocation(location.Latitude, location.Longitude),
                                  await WeatherAPI.GetForecastForLocation(location.Latitude, location.Longitude));
                     RequestSuccessfull = true;
                     LastRequestTime = DateTime.Now;
@@ -73,7 +74,7 @@ namespace WeatherApplication.ViewModels
             {
                 ErrorMessage = "GPS Error: " + ex.Message;
 
-                Console.WriteLine("GPS Error: " + ex.Message );
+                Console.WriteLine("GPS Error: " + ex.Message);
                 RequestSuccessfull = false;
 
                 // Unable to get location

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace WeatherObjects
 {
@@ -7,8 +6,8 @@ namespace WeatherObjects
     {
         public WeatherForecastContainer()
         {
+        }
 
-    }
         public List<WeatherContainer> list { get; set; }
     }
 }

@@ -7,10 +7,10 @@ namespace WeatherApplication.ViewModels
 {
     public class LocationBasedWeatherViewModel : ViewModelBase, IActiveAware
     {
-
         public event EventHandler IsActiveChanged;
 
         private bool _isActive;
+
         public bool IsActive
         {
             get { return _isActive; }
@@ -18,7 +18,9 @@ namespace WeatherApplication.ViewModels
             {
                 SetProperty(ref _isActive, value, RaiseIsActiveChanged);
                 if (value)
+                {
                     LoadLocation();
+                }
             }
         }
 
@@ -29,9 +31,11 @@ namespace WeatherApplication.ViewModels
 
         public async void LoadLocation()
         {
-
             if ((DateTime.Now - LastRequestTime).TotalMinutes < 10)
+            {
                 return;
+            }
+
             IsLoading = true;
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -43,7 +47,7 @@ namespace WeatherApplication.ViewModels
 
             try
             {
-                var location = await Geolocation.GetLastKnownLocationAsync();
+                Location location = await Geolocation.GetLastKnownLocationAsync();
 
                 if (location != null)
                 {
@@ -51,17 +55,16 @@ namespace WeatherApplication.ViewModels
                                  await WeatherAPI.GetForecastForLocation(location.Latitude, location.Longitude));
                     RequestSuccessfull = true;
                     LastRequestTime = DateTime.Now;
-
                 }
             }
-            catch (FeatureNotSupportedException ex)
+            catch (FeatureNotSupportedException)
             {
                 Console.WriteLine("GPS Not supported");
                 ErrorMessage = "GPS Not supported";
                 RequestSuccessfull = false;
                 // Handle not supported on device exception
             }
-            catch (PermissionException ex)
+            catch (PermissionException)
             {
                 ErrorMessage = "Permission denied";
 
@@ -81,6 +84,5 @@ namespace WeatherApplication.ViewModels
             }
             IsLoading = false;
         }
-
     }
 }

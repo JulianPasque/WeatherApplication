@@ -8,6 +8,5 @@ namespace WeatherApplication.ViewModels
             : base(navigationService)
         {
         }
-
     }
 }

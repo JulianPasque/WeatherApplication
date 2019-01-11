@@ -5,9 +5,10 @@ namespace WeatherObjects
 {
     public class ForecastObject : INotifyPropertyChanged
     {
-        DateTime _Time;
+        private DateTime _Time;
 
-        public DateTime Time { 
+        public DateTime Time
+        {
             get
             {
                 return _Time;
@@ -22,7 +23,8 @@ namespace WeatherObjects
             }
         }
 
-        double _Temperatur;
+        private double _Temperatur;
+
         public double Temperatur
         {
             get
@@ -38,7 +40,9 @@ namespace WeatherObjects
                 }
             }
         }
-        double _MinTemperatur;
+
+        private double _MinTemperatur;
+
         public double MinTemperatur
         {
             get
@@ -55,7 +59,8 @@ namespace WeatherObjects
             }
         }
 
-        double _MaxTemperatur;
+        private double _MaxTemperatur;
+
         public double MaxTemperatur
         {
             get
@@ -72,7 +77,8 @@ namespace WeatherObjects
             }
         }
 
-        Weather _Weather;
+        private Weather _Weather;
+
         public Weather Weather
         {
             get
@@ -92,6 +98,5 @@ namespace WeatherObjects
         protected void OnPropertyChanged(string name) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
         public event PropertyChangedEventHandler PropertyChanged;
-
     }
 }

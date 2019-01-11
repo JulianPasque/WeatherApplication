@@ -2,8 +2,6 @@
 using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using Prism;
-using Prism.Ioc;
 using Xamarin.Forms;
 
 namespace WeatherApplication.Droid
@@ -19,7 +17,7 @@ namespace WeatherApplication.Droid
             base.OnCreate(bundle);
             Forms.SetFlags("FastRenderers_Experimental");
 
-            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer:true);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             Xamarin.Essentials.Platform.Init(this, bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
@@ -33,6 +31,4 @@ namespace WeatherApplication.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-
 }
-

@@ -15,8 +15,8 @@ namespace WeatherApplication.ViewModels
         {
             ItemTappedCommand = new DelegateCommand<Country>(ItemSelected);
             SearchCommand = new DelegateCommand(Filter);
-
         }
+
         public ObservableCollection<Country> Countries { get; set; } = new ObservableCollection<Country>(CountryCollection.Countries);
 
         public DelegateCommand<Country> ItemTappedCommand { get; set; }
@@ -27,10 +27,14 @@ namespace WeatherApplication.ViewModels
         private void Filter()
         {
             if (String.IsNullOrWhiteSpace(Text))
+            {
                 Countries = new ObservableCollection<Country>(CountryCollection.Countries);
-
+            }
             else
+            {
                 Countries = new ObservableCollection<Country>(CountryCollection.Countries.Where(x => x.Name.ToLower().Contains(Text.ToLower())).ToList());
+            }
+
             RaisePropertyChanged(nameof(Countries));
         }
 

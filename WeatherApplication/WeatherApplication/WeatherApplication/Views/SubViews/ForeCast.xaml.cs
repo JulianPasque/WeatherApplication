@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using WeatherApplication.Services;
 using WeatherObjects;
 using Xamarin.Forms;
@@ -19,9 +18,12 @@ namespace WeatherApplication.Views.SubViews
             set
             {
                 if (ForecastTime != value)
+                {
                     base.SetValue(ForecastTimeProperty, value);
+                }
             }
         }
+
         public static readonly BindableProperty ForecastTimeProperty = BindableProperty.Create(
                 nameof(ForecastTime),
                 typeof(DateTime),
@@ -30,7 +32,9 @@ namespace WeatherApplication.Views.SubViews
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
                     if (newValue != null)
+                    {
                         (bindable as ForeCast).LblDate.Text = ((DateTime)newValue).ToString("D");
+                    }
                 });
 
         public double MinTemp
@@ -39,9 +43,12 @@ namespace WeatherApplication.Views.SubViews
             set
             {
                 if (MinTemp != value)
+                {
                     base.SetValue(MinTempProperty, value);
+                }
             }
         }
+
         public static readonly BindableProperty MinTempProperty = BindableProperty.Create(
                 nameof(MinTemp),
                 typeof(double),
@@ -58,9 +65,12 @@ namespace WeatherApplication.Views.SubViews
             set
             {
                 if (MaxTemp != value)
+                {
                     base.SetValue(MaxTempProperty, value);
+                }
             }
         }
+
         public static readonly BindableProperty MaxTempProperty = BindableProperty.Create(
                 nameof(MaxTemp),
                 typeof(double),
@@ -77,9 +87,12 @@ namespace WeatherApplication.Views.SubViews
             set
             {
                 if (ForecastWeather != value)
+                {
                     base.SetValue(ForecastWeatherProperty, value);
+                }
             }
         }
+
         public static readonly BindableProperty ForecastWeatherProperty = BindableProperty.Create(
                 nameof(ForecastWeather),
                 typeof(Weather),
@@ -88,8 +101,9 @@ namespace WeatherApplication.Views.SubViews
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
                     if (newValue != null)
+                    {
                         (bindable as ForeCast).IconWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue);
+                    }
                 });
     }
 }
-

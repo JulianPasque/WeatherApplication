@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApplication.Views.SubViews.ForeCast"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              CompressedLayout.IsHeadless="true">
     <Grid Margin="15,0" Padding="0,5" ColumnSpacing="0" CompressedLayout.IsHeadless="true">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="55"/>
-            <ColumnDefinition Width="50"/>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="55" />
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition Width="50" />
         </Grid.ColumnDefinitions>
-        <Label VerticalOptions="Center" FontSize="Medium" Grid.Column="0" x:Name="LblDate" HorizontalOptions="Start"/>
+        <Label VerticalOptions="Center" FontSize="Medium" Grid.Column="0" x:Name="LblDate" HorizontalOptions="Start" />
 
         <ffimageloadingsvg:SvgCachedImage x:Name="IconWeather"
-                                          Grid.Column="1" 
-                                          HorizontalOptions="Start" 
+                                          Grid.Column="1"
+                                          HorizontalOptions="Start"
                                           VerticalOptions="Center"
-                                          HeightRequest="50" WidthRequest="50"
-                                          />
-                                   
-        <Label  Grid.Column="2" x:Name="LblMinTemp" FontSize="Small" Opacity="0.65" VerticalOptions="Center" HorizontalOptions="Center"/>
-        <Label  Grid.Column="3" x:Name="LblMaxTemp" FontSize="Small" VerticalOptions="Center"  HorizontalOptions="Center"/>
+                                          HeightRequest="50" WidthRequest="50" />
 
+        <Label  Grid.Column="2" x:Name="LblMinTemp" FontSize="Small" Opacity="0.65" VerticalOptions="Center" HorizontalOptions="Center" />
+        <Label  Grid.Column="3" x:Name="LblMaxTemp" FontSize="Small" VerticalOptions="Center"  HorizontalOptions="Center" />
     </Grid>
 </ContentView>
-

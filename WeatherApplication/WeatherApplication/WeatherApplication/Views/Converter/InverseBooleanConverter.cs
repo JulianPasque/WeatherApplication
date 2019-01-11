@@ -11,7 +11,9 @@ namespace WeatherApplication.Views.Converter
             System.Globalization.CultureInfo culture)
         {
             if (targetType != typeof(bool))
+            {
                 throw new InvalidOperationException("The target must be a boolean");
+            }
 
             return !(bool)value;
         }
@@ -22,6 +24,6 @@ namespace WeatherApplication.Views.Converter
             throw new NotSupportedException();
         }
 
-        #endregion
+        #endregion IValueConverter Members
     }
 }

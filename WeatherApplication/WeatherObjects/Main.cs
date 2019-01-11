@@ -1,5 +1,4 @@
-﻿using System;
-namespace WeatherObjects
+﻿namespace WeatherObjects
 {
     public class Main
     {
@@ -9,5 +8,4 @@ namespace WeatherObjects
         public double temp_min { get; set; }
         public double temp_max { get; set; }
     }
-
 }

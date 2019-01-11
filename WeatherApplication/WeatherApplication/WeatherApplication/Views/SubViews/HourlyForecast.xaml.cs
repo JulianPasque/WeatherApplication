@@ -12,16 +12,18 @@ namespace WeatherApplication.Views.SubViews
             InitializeComponent();
         }
 
-
         public DateTime ForecastTime
         {
             get => (DateTime)base.GetValue(ForecastTimeProperty);
             set
             {
                 if (ForecastTime != value)
+                {
                     base.SetValue(ForecastTimeProperty, value);
+                }
             }
         }
+
         public static readonly BindableProperty ForecastTimeProperty = BindableProperty.Create(
                 nameof(ForecastTime),
                 typeof(DateTime),
@@ -30,7 +32,9 @@ namespace WeatherApplication.Views.SubViews
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
                     if (newValue != null)
+                    {
                         (bindable as HourlyForecast).LblTime.Text = ((DateTime)newValue).ToString("t");
+                    }
                 });
 
         public double ForecastTemp
@@ -39,9 +43,12 @@ namespace WeatherApplication.Views.SubViews
             set
             {
                 if (ForecastTemp != value)
+                {
                     base.SetValue(ForecastTempProperty, value);
+                }
             }
         }
+
         public static readonly BindableProperty ForecastTempProperty = BindableProperty.Create(
                 nameof(ForecastTemp),
                 typeof(double),
@@ -49,7 +56,7 @@ namespace WeatherApplication.Views.SubViews
                 0.0,
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
-                        (bindable as HourlyForecast).LblTemp.Text = ((double)newValue).ToString("0.0") + "°C";
+                    (bindable as HourlyForecast).LblTemp.Text = ((double)newValue).ToString("0.0") + "°C";
                 });
 
         public Weather ForecastWeather
@@ -58,9 +65,12 @@ namespace WeatherApplication.Views.SubViews
             set
             {
                 if (ForecastWeather != value)
+                {
                     base.SetValue(ForecastWeatherProperty, value);
+                }
             }
         }
+
         public static readonly BindableProperty ForecastWeatherProperty = BindableProperty.Create(
                 nameof(ForecastWeather),
                 typeof(Weather),
@@ -69,8 +79,9 @@ namespace WeatherApplication.Views.SubViews
                 propertyChanging: (bindable, oldValue, newValue) =>
                 {
                     if (newValue != null)
-                        (bindable as HourlyForecast).ImgWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue); });
+                    {
+                        (bindable as HourlyForecast).ImgWeather.Source = IconSelector.LoadWeatherIcon((Weather)newValue);
+                    }
+                });
     }
-
-
 }

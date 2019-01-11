@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using WeatherApplication.Services.API;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace WeatherApplication.Views
 {
@@ -12,8 +8,6 @@ namespace WeatherApplication.Views
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-
         }
-
     }
 }

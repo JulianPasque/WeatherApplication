@@ -5,10 +5,8 @@ namespace WeatherApplication.Services
 {
     public static class CountryCollection
     {
-
         public static List<Country> Countries = new List<Country>()
         {
-
 //new Country(){Name = "Afghanistan", CountryCode = "AF" },
 //new Country(){Name = "Ã…land Islands", CountryCode = "AX" },
 new Country(){Name = "Albania", CountryCode = "AL" },
@@ -246,8 +244,6 @@ new Country(){Name = "Uruguay", CountryCode = "UY" },
 //new Country(){Name = "Yemen", CountryCode = "YE" },
 //new Country(){Name = "Zambia", CountryCode = "ZM" },
 //new Country(){Name = "Zimbabwe", CountryCode = "ZW" }
-
     };
     }
-
 }

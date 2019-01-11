@@ -3,38 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms"
              x:Class="WeatherApplication.App">
-	<Application.Resources>
+    <Application.Resources>
 
         <ResourceDictionary>
-            
-            
+
             <!--Formular-->
-            
+
             <Color x:Key="AccentColor">#90CAF9</Color>
             <Color x:Key="TextColor">Gray</Color>
-            
+
             <Style x:Key="LabelFO" TargetType="Label">
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="TextColor" Value="{StaticResource TextColor}" />
-                
             </Style>
             <Style x:Key="EntryFO" TargetType="Entry">
                 <Setter Property="HorizontalTextAlignment" Value="End" />
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="TextColor" Value="{StaticResource TextColor}" />
-
-            </Style> 
+            </Style>
             <Style x:Key="Button" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
-            </Style> 
-            
+            </Style>
+
             <Style x:Key="Seperator" TargetType="BoxView">
                 <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
                 <Setter Property="HeightRequest" Value="1" />
-            </Style> 
-            
+            </Style>
         </ResourceDictionary>
-
     </Application.Resources>
 </prism:PrismApplication>

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WeatherObjects
+﻿namespace WeatherObjects
 {
     public class Coord
     {

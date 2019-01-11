@@ -1,20 +1,17 @@
 ﻿using FFImageLoading.Svg.Forms;
 using Foundation;
-using Prism;
-using Prism.Ioc;
 using UIKit;
-
 
 namespace WeatherApplication.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the 
-    // User Interface of the application, as well as listening (and optionally responding) to 
+    // The UIApplicationDelegate for the application. This class is responsible for launching the
+    // User Interface of the application, as well as listening (and optionally responding) to
     // application events from iOS.
     [Register("AppDelegate")]
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
         //
-        // This method is invoked when the application has loaded and is ready to run. In this 
+        // This method is invoked when the application has loaded and is ready to run. In this
         // method you should instantiate the window, load the UI into it and then make the window
         // visible.
         //
@@ -24,13 +21,11 @@ namespace WeatherApplication.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
-            var ignore = typeof(SvgCachedImage);
+            System.Type ignore = typeof(SvgCachedImage);
 
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
     }
-
-   
 }

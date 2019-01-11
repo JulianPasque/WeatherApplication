@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApplication.Views.AdressBasedWeather"
              xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:Converter="clr-namespace:WeatherApplication.Views.Converter"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              ios:Page.UseSafeArea="true"
              Title="Adress search"
@@ -15,38 +15,35 @@
             <Converter:InverseBooleanConverter x:Key="InverseBoolean" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" >
-        <Grid RowSpacing="0" >
+
+    <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <Grid RowSpacing="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            
+
             <SubViews:WeatherOverviewItem Grid.Row="2"
-                                          IsVisible="{Binding RequestSuccessfull}"/>
-            
-              <Label Grid.Row="2" Text="{Binding ErrorMessage}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding RequestSuccessfull, Converter={StaticResource InverseBoolean}}"/>
+                                          IsVisible="{Binding RequestSuccessfull}" />
+
+              <Label Grid.Row="2" Text="{Binding ErrorMessage}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding RequestSuccessfull, Converter={StaticResource InverseBoolean}}" />
 
             <StackLayout Grid.Row="1" Orientation="Vertical" IsVisible="{Binding IsLoading}">
-                
+
                 <ActivityIndicator HorizontalOptions="Center" IsRunning="{Binding IsLoading}" />
-                <Label Text="Loading Weather" HorizontalOptions="Center" FontSize="Large"/>
-                
+                <Label Text="Loading Weather" HorizontalOptions="Center" FontSize="Large" />
             </StackLayout>
-            
-            
-            
+
               <Frame Grid.Row="0"
                      Padding="0"
                      x:Name="FrameBorder">
-                
+
                    <Grid HeightRequest="15"
                          IsClippedToBounds="true"
                          x:Name="Container"
                          BackgroundColor="White">
-                            
+
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="5" />
                                 <ColumnDefinition Width="2*" />
@@ -55,87 +52,74 @@
                                 <ColumnDefinition Width="5" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="15"/>
-                                <RowDefinition Height="45"/> 
-                                <RowDefinition Height="45"/> 
-                                <RowDefinition Height="45"/>
-                                <RowDefinition Height="45"/>
+                                <RowDefinition Height="15" />
+                                <RowDefinition Height="45" />
+                                <RowDefinition Height="45" />
+                                <RowDefinition Height="45" />
+                                <RowDefinition Height="45" />
                             </Grid.RowDefinitions>
-                                
-                    
+
                             <Label Grid.Row="1" Grid.Column="1"
                                    Text="Ländercode"
-                                   Style="{StaticResource LabelFO}"/>
-                            
-                                  
-                        
-                         <ffimageloadingsvg:SvgCachedImage Grid.Row="1" 
-                                                           Grid.Column="3" 
-                                                           HorizontalOptions="Start" 
-                                                           Source="{Binding Country.Flag}"
-                                                           />  
-                        
+                                   Style="{StaticResource LabelFO}" />
+
+                         <ffimageloadingsvg:SvgCachedImage Grid.Row="1"
+                                                           Grid.Column="3"
+                                                           HorizontalOptions="Start"
+                                                           Source="{Binding Country.Flag}" />
+
                          <Label Grid.Row="1" Grid.Column="3"
                                 HorizontalOptions="End"
-                                Text="{Binding Country.Name}"          
-                                Style="{StaticResource LabelFO}"/>
-                        
-                        <BoxView VerticalOptions="Fill" 
-                                 HorizontalOptions="Fill" 
-                                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" 
+                                Text="{Binding Country.Name}"
+                                Style="{StaticResource LabelFO}" />
+
+                        <BoxView VerticalOptions="Fill"
+                                 HorizontalOptions="Fill"
+                                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5"
                                  BackgroundColor="Transparent">
                             <BoxView.GestureRecognizers>
                                        <TapGestureRecognizer Command="{Binding SelectCountry}"
                                                              NumberOfTapsRequired="1" />
                             </BoxView.GestureRecognizers>
-                        </BoxView>      
-                        
+                        </BoxView>
+
                         <Label Grid.Row="2" Grid.Column="1"
-                               Text="Stadt"          
-                               Style="{StaticResource LabelFO}"/>
-                        
+                               Text="Stadt"
+                               Style="{StaticResource LabelFO}" />
 
                         <Entry Grid.Row="2" Grid.Column="3"
-                               Text="{Binding City}" 
-                               Style="{StaticResource EntryFO}"/>
-                                     
+                               Text="{Binding City}"
+                               Style="{StaticResource EntryFO}" />
+
                         <Button Text="Wetter laden"
                                 Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
-                                Command="{Binding ReloadWeather}" 
+                                Command="{Binding ReloadWeather}"
                                 HorizontalOptions="Fill"
-                                Style="{StaticResource Button}"/>
-                                
-                    
-                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0" 
+                                Style="{StaticResource Button}" />
+
+                        <ffimageloadingsvg:SvgCachedImage Grid.Row="0"
                                                           Grid.Column="0" Grid.ColumnSpan="5"
-                                                          HorizontalOptions="Center" 
+                                                          HorizontalOptions="Center"
                                                           Source="resource://WeatherApplication.Images.arrow.svg"
-                                                          x:Name="IconExpand"
-                                                          >
-                        
+                                                          x:Name="IconExpand">
+
                                 <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="BtnExpand"/>
-                                    <SwipeGestureRecognizer Direction="Down" 
-                                        Swiped="Handle_Swiped"/>
-                                    <SwipeGestureRecognizer Direction="Up" 
-                                        Swiped="Handle_Swiped"/>
+                                    <TapGestureRecognizer Tapped="BtnExpand" />
+                                    <SwipeGestureRecognizer Direction="Down"
+                                        Swiped="Handle_Swiped" />
+                                    <SwipeGestureRecognizer Direction="Up"
+                                        Swiped="Handle_Swiped" />
                                 </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
                         </ffimageloadingsvg:SvgCachedImage>
-                    
-             
-                    </Grid> 
-                
-                    
-                    
+                    </Grid>
+
                 <Frame.GestureRecognizers>
-                    <SwipeGestureRecognizer Direction="Down" 
-                                            Swiped="Handle_Swiped"/>
-                    <SwipeGestureRecognizer Direction="Up" 
-                                            Swiped="Handle_Swiped"/>
+                    <SwipeGestureRecognizer Direction="Down"
+                                            Swiped="Handle_Swiped" />
+                    <SwipeGestureRecognizer Direction="Up"
+                                            Swiped="Handle_Swiped" />
                 </Frame.GestureRecognizers>
             </Frame>
-                                         
         </Grid>
-    </ScrollView>  
+    </ScrollView>
 </ContentPage>
-

@@ -1,28 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApplication.Views.SubViews.HourlyForecast"
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              CompressedLayout.IsHeadless="true">
-             
+
     <StackLayout Orientation="Vertical"
                  CompressedLayout.IsHeadless="true">
-        
+
         <Label x:Name="LblTime"
                HorizontalOptions="Center"
                VerticalOptions="StartAndExpand"
-               FontSize="Small"/>
-      
-        <ffimageloadingsvg:SvgCachedImage x:Name="ImgWeather"
-                                           HorizontalOptions="Center" 
-                                           VerticalOptions="StartAndExpand"
-                                           HeightRequest="40" WidthRequest="40"/>  
-          
-        <Label x:Name="LblTemp" 
-               HorizontalOptions="Center"
-               FontSize="Small"/>
+               FontSize="Small" />
 
+        <ffimageloadingsvg:SvgCachedImage x:Name="ImgWeather"
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="StartAndExpand"
+                                           HeightRequest="40" WidthRequest="40" />
+
+        <Label x:Name="LblTemp"
+               HorizontalOptions="Center"
+               FontSize="Small" />
     </StackLayout>
 </ContentView>
-

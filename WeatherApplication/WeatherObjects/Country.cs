@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace WeatherObjects
+﻿namespace WeatherObjects
 {
-
-public class Country
+    public class Country
     {
         public string Name { get; set; }
         public string CountryCode { get; set; }

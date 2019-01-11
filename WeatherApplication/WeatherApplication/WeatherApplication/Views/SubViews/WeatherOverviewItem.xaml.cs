@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace WeatherApplication.Views.SubViews
 {
@@ -10,9 +8,5 @@ namespace WeatherApplication.Views.SubViews
         {
             InitializeComponent();
         }
-
-
-
-
     }
 }

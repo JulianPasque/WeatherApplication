@@ -11,7 +11,6 @@ namespace WeatherApplication.ViewModels
     {
         protected INavigationService NavigationService { get; private set; }
 
-
         public ViewModelBase()
         {
         }
@@ -23,29 +22,24 @@ namespace WeatherApplication.ViewModels
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
-
         }
 
         public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
-
         }
 
         public virtual void OnNavigatingTo(INavigationParameters parameters)
         {
-
         }
 
         public virtual void Destroy()
         {
-
         }
 
         public void LoadWeather(WeatherContainer weatherContainer, WeatherForecastContainer WeatherForecast)
         {
             CityName = weatherContainer.name;
             CurrentTemp = weatherContainer.main.temp;
-
 
             DateTime Sunrise = UnixTimeStampToDateTime(weatherContainer.sys.sunrise);
             DateTime Sunset = UnixTimeStampToDateTime(weatherContainer.sys.sunset);
@@ -60,15 +54,14 @@ namespace WeatherApplication.ViewModels
                     Temperatur = WeatherForecast.list[i].main.temp,
                     Weather = WeatherForecast.list[i].weather[0]
                 });
-
             }
             bool SunriseAdded = false;
             bool SunsetAdded = false;
 
-
-            for (int i = 0; i < Forecasts.Count; ++i) {
-                var SunriseDif = (Sunrise - Forecasts[i].Time);
-                var SunsetDif = (Sunset - Forecasts[i].Time);
+            for (int i = 0; i < Forecasts.Count; ++i)
+            {
+                TimeSpan SunriseDif = (Sunrise - Forecasts[i].Time);
+                TimeSpan SunsetDif = (Sunset - Forecasts[i].Time);
                 if (SunriseDif < new TimeSpan(0, 0, 0) && SunriseDif.Hours > -3 && !SunriseAdded)
                 {
                     SetNextHourlyForecast(new ForecastObject()
@@ -78,12 +71,9 @@ namespace WeatherApplication.ViewModels
                     });
                     SunriseAdded = true;
                     i--;
-
                 }
-               
-
-                else if (SunsetDif < new TimeSpan(0,0,0) && SunsetDif.Hours > -3 && !SunsetAdded)
-                { 
+                else if (SunsetDif < new TimeSpan(0, 0, 0) && SunsetDif.Hours > -3 && !SunsetAdded)
+                {
                     SetNextHourlyForecast(new ForecastObject()
                     {
                         Time = Sunset,
@@ -95,13 +85,10 @@ namespace WeatherApplication.ViewModels
                 else
                 {
                     SetNextHourlyForecast(Forecasts[i]);
-
                 }
             }
 
-
-
-            for(int ahead = 1; ahead < 5; ++ahead)
+            for (int ahead = 1; ahead < 5; ++ahead)
             {
                 var List = WeatherForecast.list.Where(x => UnixTimeStampToDateTime(x.dt).Date == DateTime.Now.AddDays(ahead).Date).ToList();
 
@@ -112,41 +99,59 @@ namespace WeatherApplication.ViewModels
                     Time = DateTime.Now.AddDays(ahead),
                     Weather = List.Where(x => UnixTimeStampToDateTime(x.dt).TimeOfDay >= new TimeSpan(11, 0, 0) && UnixTimeStampToDateTime(x.dt).TimeOfDay < new TimeSpan(14, 0, 0)).First().weather[0]
                 });
-
             }
         }
-
-
 
         private void SetNextHourlyForecast(ForecastObject forecast)
         {
             if (HourlyForecast1 == null)
+            {
                 HourlyForecast1 = forecast;
+            }
             else if (HourlyForecast2 == null)
+            {
                 HourlyForecast2 = forecast;
+            }
             else if (HourlyForecast3 == null)
+            {
                 HourlyForecast3 = forecast;
+            }
             else if (HourlyForecast4 == null)
+            {
                 HourlyForecast4 = forecast;
+            }
             else if (HourlyForecast5 == null)
+            {
                 HourlyForecast5 = forecast;
+            }
             else if (HourlyForecast6 == null)
+            {
                 HourlyForecast6 = forecast;
+            }
         }
 
         private void SetNextDailyForecast(ForecastObject forecast)
         {
             if (DailyForecast1 == null)
+            {
                 DailyForecast1 = forecast;
+            }
             else if (DailyForecast2 == null)
+            {
                 DailyForecast2 = forecast;
+            }
             else if (DailyForecast3 == null)
+            {
                 DailyForecast3 = forecast;
+            }
             else if (DailyForecast4 == null)
+            {
                 DailyForecast4 = forecast;
+            }
             else if (DailyForecast5 == null)
+            {
                 DailyForecast5 = forecast;
-
+            }
         }
 
         public static DateTime UnixTimeStampToDateTime(double unixTimeStamp)
@@ -157,7 +162,8 @@ namespace WeatherApplication.ViewModels
             return dtDateTime;
         }
 
-        bool _RequestSuccessfull;
+        private bool _RequestSuccessfull;
+
         public bool RequestSuccessfull
         {
             get
@@ -167,13 +173,17 @@ namespace WeatherApplication.ViewModels
             set
             {
                 if (_RequestSuccessfull == value)
+                {
                     return;
+                }
+
                 _RequestSuccessfull = value;
                 RaisePropertyChanged(nameof(RequestSuccessfull));
             }
         }
 
-        string _ErrorMessage;
+        private string _ErrorMessage;
+
         public string ErrorMessage
         {
             get
@@ -183,16 +193,19 @@ namespace WeatherApplication.ViewModels
             set
             {
                 if (_ErrorMessage == value)
+                {
                     return;
+                }
+
                 _ErrorMessage = value;
                 RaisePropertyChanged(nameof(ErrorMessage));
             }
         }
 
-        public DateTime LastRequestTime = new DateTime(1970,1,1);
+        public DateTime LastRequestTime = new DateTime(1970, 1, 1);
 
+        private bool _IsLoading;
 
-        bool _IsLoading;
         public bool IsLoading
         {
             get
@@ -202,13 +215,17 @@ namespace WeatherApplication.ViewModels
             set
             {
                 if (_IsLoading == value)
+                {
                     return;
+                }
+
                 _IsLoading = value;
                 RaisePropertyChanged(nameof(IsLoading));
             }
         }
 
-        string _Message;
+        private string _Message;
+
         public string Message
         {
             get
@@ -218,14 +235,17 @@ namespace WeatherApplication.ViewModels
             set
             {
                 if (_Message == value)
+                {
                     return;
+                }
+
                 _Message = value;
                 RaisePropertyChanged(nameof(Message));
             }
         }
 
+        private string _CityName;
 
-        string _CityName;
         public string CityName
         {
             get
@@ -235,14 +255,17 @@ namespace WeatherApplication.ViewModels
             set
             {
                 if (_CityName == value)
+                {
                     return;
+                }
+
                 _CityName = value;
                 RaisePropertyChanged(nameof(CityName));
-                }
             }
-
+        }
 
         private double _CurrentTemp;
+
         public double CurrentTemp
         {
             get
@@ -252,24 +275,26 @@ namespace WeatherApplication.ViewModels
             set
             {
                 if (_CurrentTemp == value)
+                {
                     return;
+                }
+
                 _CurrentTemp = value;
                 RaisePropertyChanged(nameof(CurrentTemp));
             }
         }
 
-        ForecastObject _HourlyForecast1;
+        private ForecastObject _HourlyForecast1;
 
         public ForecastObject HourlyForecast1
         {
             get
             {
-    
                 return _HourlyForecast1;
             }
             set
             {
-                if(_HourlyForecast1 != value)
+                if (_HourlyForecast1 != value)
                 {
                     _HourlyForecast1 = value;
                     RaisePropertyChanged(nameof(HourlyForecast1));
@@ -277,13 +302,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        ForecastObject _HourlyForecast2;
+        private ForecastObject _HourlyForecast2;
 
         public ForecastObject HourlyForecast2
         {
             get
             {
-
                 return _HourlyForecast2;
             }
             set
@@ -296,13 +320,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        ForecastObject _HourlyForecast3;
+        private ForecastObject _HourlyForecast3;
 
         public ForecastObject HourlyForecast3
         {
             get
             {
-
                 return _HourlyForecast3;
             }
             set
@@ -315,13 +338,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        ForecastObject _HourlyForecast4;
+        private ForecastObject _HourlyForecast4;
 
         public ForecastObject HourlyForecast4
         {
             get
             {
-
                 return _HourlyForecast4;
             }
             set
@@ -334,13 +356,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        ForecastObject _HourlyForecast5;
+        private ForecastObject _HourlyForecast5;
 
         public ForecastObject HourlyForecast5
         {
             get
             {
-
                 return _HourlyForecast5;
             }
             set
@@ -353,13 +374,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        ForecastObject _HourlyForecast6;
+        private ForecastObject _HourlyForecast6;
 
         public ForecastObject HourlyForecast6
         {
             get
             {
-
                 return _HourlyForecast6;
             }
             set
@@ -372,14 +392,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-
-        ForecastObject _DailyForecast1;
+        private ForecastObject _DailyForecast1;
 
         public ForecastObject DailyForecast1
         {
             get
             {
-
                 return _DailyForecast1;
             }
             set
@@ -392,13 +410,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        ForecastObject _DailyForecast2;
+        private ForecastObject _DailyForecast2;
 
         public ForecastObject DailyForecast2
         {
             get
             {
-
                 return _DailyForecast2;
             }
             set
@@ -411,14 +428,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-
-        ForecastObject _DailyForecast3;
+        private ForecastObject _DailyForecast3;
 
         public ForecastObject DailyForecast3
         {
             get
             {
-
                 return _DailyForecast3;
             }
             set
@@ -431,14 +446,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-
-        ForecastObject _DailyForecast4;
+        private ForecastObject _DailyForecast4;
 
         public ForecastObject DailyForecast4
         {
             get
             {
-
                 return _DailyForecast4;
             }
             set
@@ -451,13 +464,12 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        ForecastObject _DailyForecast5;
+        private ForecastObject _DailyForecast5;
 
         public ForecastObject DailyForecast5
         {
             get
             {
-
                 return _DailyForecast5;
             }
             set
@@ -469,6 +481,5 @@ namespace WeatherApplication.ViewModels
                 }
             }
         }
-
     }
 }

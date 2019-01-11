@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 using Xamarin.Forms;
 
@@ -12,7 +11,8 @@ namespace WeatherApplication.Views
             InitializeComponent();
         }
 
-        bool Expanded = false;
+        private bool Expanded = false;
+
         public void Expand()
         {
             Action<double> callback = input => FrameBorder.HeightRequest = input;
@@ -25,28 +25,24 @@ namespace WeatherApplication.Views
             }
             else
             {
-
-           
-            FrameBorder.Animate("expand", callback, 15, 185, 5, 500, Easing.CubicInOut);
-            IconExpand.TranslateTo(0, IconExpand.Y + 170, 500, Easing.CubicInOut);
-            IconExpand.RotateTo(180, 500, Easing.CubicInOut);
+                FrameBorder.Animate("expand", callback, 15, 185, 5, 500, Easing.CubicInOut);
+                IconExpand.TranslateTo(0, IconExpand.Y + 170, 500, Easing.CubicInOut);
+                IconExpand.RotateTo(180, 500, Easing.CubicInOut);
             }
             Expanded = !Expanded;
         }
 
-        void Expand(object sender, Xamarin.Forms.SwipedEventArgs e)
+        private void Expand(object sender, Xamarin.Forms.SwipedEventArgs e)
         {
             Expand();
-
         }
 
-        void BtnExpand(object sender, Xamarin.Forms.TappedEventArgs e)
+        private void BtnExpand(object sender, Xamarin.Forms.TappedEventArgs e)
         {
             Expand();
-
         }
 
-        void Handle_Swiped(object sender, Xamarin.Forms.SwipedEventArgs e)
+        private void Handle_Swiped(object sender, Xamarin.Forms.SwipedEventArgs e)
         {
             Expand();
         }

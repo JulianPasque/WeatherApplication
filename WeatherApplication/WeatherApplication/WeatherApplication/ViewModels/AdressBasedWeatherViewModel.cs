@@ -21,7 +21,6 @@ namespace WeatherApplication.ViewModels
         public DelegateCommand ReloadWeather { get; set; }
         public DelegateCommand SelectCountry { get; set; }
 
-
         public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
@@ -29,11 +28,8 @@ namespace WeatherApplication.ViewModels
             if (parameters.ContainsKey("Country"))
             {
                 Country = parameters.GetValue<Country>("Country");
-
             }
-
         }
-
 
         public Country Country
         {
@@ -48,7 +44,6 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-
         public string City
         {
             get
@@ -59,15 +54,13 @@ namespace WeatherApplication.ViewModels
             {
                 Preferences.Set("City", value);
                 RaisePropertyChanged(nameof(City));
-
             }
         }
-
-
 
         public event EventHandler IsActiveChanged;
 
         private bool _isActive;
+
         public bool IsActive
         {
             get { return _isActive; }
@@ -75,7 +68,9 @@ namespace WeatherApplication.ViewModels
             {
                 SetProperty(ref _isActive, value, RaiseIsActiveChanged);
                 if (value)
+                {
                     LoadWeather();
+                }
             }
         }
 
@@ -87,18 +82,16 @@ namespace WeatherApplication.ViewModels
         public async void CountrySelection()
         {
             await NavigationService.NavigateAsync("CountryPickerPage");
-
-
         }
 
         public async void LoadWeather()
         {
-
             if ((DateTime.Now - LastRequestTime).TotalMinutes < 10)
+            {
                 return;
+            }
+
             IsLoading = true;
-
-
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
@@ -112,15 +105,13 @@ namespace WeatherApplication.ViewModels
                             await WeatherAPI.GetForecastForCity(City, Country.CountryCode));
                 RequestSuccessfull = true;
                 LastRequestTime = DateTime.Now;
-
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 ErrorMessage = "Land und Stadtkombination prüfen";
                 RequestSuccessfull = false;
             }
             IsLoading = false;
         }
-
     }
 }

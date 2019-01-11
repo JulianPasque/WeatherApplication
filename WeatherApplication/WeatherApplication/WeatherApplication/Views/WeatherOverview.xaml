@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TabbedPage 
+<TabbedPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Views="clr-namespace:WeatherApplication.Views"
     x:Class="WeatherApplication.Views.WeatherOverview"
-    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
-    BackgroundColor="White"
-    
-    >
-    
-    <Views:AdressBasedWeather/>
-    <Views:LocationBasedWeather/>
+    BackgroundColor="White">
 
-
-       
+    <Views:AdressBasedWeather />
+    <Views:LocationBasedWeather />
 </TabbedPage>
-

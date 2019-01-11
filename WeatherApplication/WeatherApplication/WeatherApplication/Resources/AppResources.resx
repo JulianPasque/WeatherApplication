@@ -98,10 +98,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AdressSearch" xml:space="preserve">
-    <value>Current position</value>
+    <value>Adress search</value>
   </data>
   <data name="LocationSearch" xml:space="preserve">
-    <value>Location search</value>
+    <value>Current position</value>
   </data>
   <data name="Country" xml:space="preserve">
     <value>Country</value>

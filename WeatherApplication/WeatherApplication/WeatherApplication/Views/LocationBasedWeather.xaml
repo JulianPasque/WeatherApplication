@@ -8,7 +8,7 @@
     xmlns:Resource="clr-namespace:WeatherApplication.Services"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
-    Title="{Resource:Translate AdressSearch}">
+    Title="{Resource:Translate LocationSearch}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converter:InverseBooleanConverter x:Key="InverseBoolean" />

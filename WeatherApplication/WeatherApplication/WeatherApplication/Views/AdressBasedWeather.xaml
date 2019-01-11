@@ -27,12 +27,24 @@
             <SubViews:WeatherOverviewItem Grid.Row="2"
                                           IsVisible="{Binding RequestSuccessfull}" />
 
-              <Label Grid.Row="2" Text="{Binding ErrorMessage}" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="{Binding RequestSuccessfull, Converter={StaticResource InverseBoolean}}" />
+              <Label Grid.Row="2" 
+                     Text="{Binding ErrorMessage}" 
+                     FontSize="Large"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     IsVisible="{Binding RequestSuccessfull, Converter={StaticResource InverseBoolean}}" />
 
-            <StackLayout Grid.Row="1" Orientation="Vertical" IsVisible="{Binding IsLoading}">
+            <StackLayout Grid.Row="1" 
+                         Orientation="Vertical" 
+                         IsVisible="{Binding IsLoading}">
 
-                <ActivityIndicator HorizontalOptions="Center" IsRunning="{Binding IsLoading}" />
-                <Label Text="Loading Weather" HorizontalOptions="Center" FontSize="Large" />
+                <ActivityIndicator HorizontalOptions="Center"
+                                   IsRunning="{Binding IsLoading}" />
+            
+                <Label Text="Loading Weather"
+                       HorizontalOptions="Center" 
+                       FontSize="Large" />
+                
             </StackLayout>
 
               <Frame Grid.Row="0"
@@ -106,9 +118,9 @@
                                 <ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="BtnExpand" />
                                     <SwipeGestureRecognizer Direction="Down"
-                                        Swiped="Handle_Swiped" />
+                                                            Swiped="Handle_Swiped" />
                                     <SwipeGestureRecognizer Direction="Up"
-                                        Swiped="Handle_Swiped" />
+                                                            Swiped="Handle_Swiped" />
                                 </ffimageloadingsvg:SvgCachedImage.GestureRecognizers>
                         </ffimageloadingsvg:SvgCachedImage>
                     </Grid>

@@ -5,7 +5,7 @@ using Xamarin.Essentials;
 
 namespace WeatherApplication.ViewModels
 {
-    public class LocationBasedWeatherViewModel : ViewModelBase, IActiveAware
+    public class LocationBasedWeatherViewModel : WeatherViewModelBase, IActiveAware
     {
         public event EventHandler IsActiveChanged;
 
@@ -13,7 +13,7 @@ namespace WeatherApplication.ViewModels
 
         public bool IsActive
         {
-            get { return _isActive; }
+            get => _isActive;
             set
             {
                 SetProperty(ref _isActive, value, RaiseIsActiveChanged);
@@ -24,10 +24,7 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        protected virtual void RaiseIsActiveChanged()
-        {
-            IsActiveChanged?.Invoke(this, EventArgs.Empty);
-        }
+        protected virtual void RaiseIsActiveChanged() => IsActiveChanged?.Invoke(this, EventArgs.Empty);
 
         public async void LoadLocation()
         {

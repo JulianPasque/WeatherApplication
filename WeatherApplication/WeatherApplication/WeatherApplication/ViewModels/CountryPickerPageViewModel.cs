@@ -26,15 +26,7 @@ namespace WeatherApplication.ViewModels
 
         private void Filter()
         {
-            if (String.IsNullOrWhiteSpace(Text))
-            {
-                Countries = new ObservableCollection<Country>(CountryCollection.Countries);
-            }
-            else
-            {
-                Countries = new ObservableCollection<Country>(CountryCollection.Countries.Where(x => x.Name.ToLower().Contains(Text.ToLower())).ToList());
-            }
-
+            Countries = String.IsNullOrWhiteSpace(Text) ?  new ObservableCollection<Country>(CountryCollection.Countries) : new ObservableCollection<Country>(CountryCollection.Countries.Where(x => x.Name.ToLower().Contains(Text.ToLower())).ToList());
             RaisePropertyChanged(nameof(Countries));
         }
 

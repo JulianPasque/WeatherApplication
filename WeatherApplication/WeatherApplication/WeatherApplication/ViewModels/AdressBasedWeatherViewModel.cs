@@ -9,7 +9,7 @@ using Xamarin.Essentials;
 
 namespace WeatherApplication.ViewModels
 {
-    public class AdressBasedWeatherViewModel : ViewModelBase, IActiveAware
+    public class AdressBasedWeatherViewModel : WeatherViewModelBase, IActiveAware
     {
         public AdressBasedWeatherViewModel(INavigationService navigationService)
             : base(navigationService)
@@ -33,10 +33,7 @@ namespace WeatherApplication.ViewModels
 
         public Country Country
         {
-            get
-            {
-                return JsonConvert.DeserializeObject<Country>(Preferences.Get("Country", JsonConvert.SerializeObject(new Country() { Name = "Germany", CountryCode = "De" })));
-            }
+            get => JsonConvert.DeserializeObject<Country>(Preferences.Get("Country", JsonConvert.SerializeObject(new Country() { Name = "Germany", CountryCode = "De" })));
             set
             {
                 Preferences.Set("Country", JsonConvert.SerializeObject(value));
@@ -46,10 +43,7 @@ namespace WeatherApplication.ViewModels
 
         public string City
         {
-            get
-            {
-                return Preferences.Get("City", "Köln");
-            }
+            get => Preferences.Get("City", "Köln");
             set
             {
                 Preferences.Set("City", value);
@@ -74,15 +68,9 @@ namespace WeatherApplication.ViewModels
             }
         }
 
-        protected virtual void RaiseIsActiveChanged()
-        {
-            IsActiveChanged?.Invoke(this, EventArgs.Empty);
-        }
+        protected virtual void RaiseIsActiveChanged() => IsActiveChanged?.Invoke(this, EventArgs.Empty);
 
-        public async void CountrySelection()
-        {
-            await NavigationService.NavigateAsync("CountryPickerPage");
-        }
+        public async void CountrySelection() => await NavigationService.NavigateAsync("CountryPickerPage");
 
         public async void LoadWeather()
         {

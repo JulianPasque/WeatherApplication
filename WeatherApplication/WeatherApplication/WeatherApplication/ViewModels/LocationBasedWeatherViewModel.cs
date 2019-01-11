@@ -28,11 +28,11 @@ namespace WeatherApplication.ViewModels
 
         public async void LoadLocation()
         {
+
             if ((DateTime.Now - LastRequestTime).TotalMinutes < 10)
             {
                 return;
             }
-
             IsLoading = true;
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -44,14 +44,22 @@ namespace WeatherApplication.ViewModels
 
             try
             {
+         
                 Location location = await Geolocation.GetLastKnownLocationAsync();
 
                 if (location != null)
                 {
+
+
                     LoadWeather(await WeatherAPI.GetCurrentWeatherForLocation(location.Latitude, location.Longitude),
                                  await WeatherAPI.GetForecastForLocation(location.Latitude, location.Longitude));
                     RequestSuccessfull = true;
                     LastRequestTime = DateTime.Now;
+                }
+                else
+                {
+                    ErrorMessage = "Location not found";
+                    RequestSuccessfull = false;
                 }
             }
             catch (FeatureNotSupportedException)

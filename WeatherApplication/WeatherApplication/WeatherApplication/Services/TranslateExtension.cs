@@ -12,7 +12,7 @@ namespace WeatherApplication.Services
     [ContentProperty("Text")]
     public class TranslateExtension : IMarkupExtension
     {
-        const string ResourceId = "LocalizationDemo.Resources.AppResource";
+        const string ResourceId = "WeatherApplication.Resources.AppResources";
         public string Text { get; set; }
 
         public object ProvideValue(IServiceProvider serviceProvider)

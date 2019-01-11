@@ -37,7 +37,7 @@ namespace WeatherApplication.ViewModels
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                ErrorMessage = "Internet required";
+                ErrorMessage = Resources.AppResources.InternetRequired;
                 IsLoading = false;
                 return;
             }
@@ -58,31 +58,28 @@ namespace WeatherApplication.ViewModels
                 }
                 else
                 {
-                    ErrorMessage = "Location not found";
+                    ErrorMessage = Resources.AppResources.NoLocation;
                     RequestSuccessfull = false;
                 }
             }
             catch (FeatureNotSupportedException)
             {
-                Console.WriteLine("GPS Not supported");
-                ErrorMessage = "GPS Not supported";
+                ErrorMessage = Resources.AppResources.NotSupported;
                 RequestSuccessfull = false;
                 // Handle not supported on device exception
             }
             catch (PermissionException)
             {
-                ErrorMessage = "Permission denied";
+                ErrorMessage = Resources.AppResources.NoPermission;
 
-                Console.WriteLine("Permission denied");
                 RequestSuccessfull = false;
 
                 // Handle permission exception
             }
             catch (Exception ex)
             {
-                ErrorMessage = "GPS Error: " + ex.Message;
+                ErrorMessage = "Error: " + ex.Message;
 
-                Console.WriteLine("GPS Error: " + ex.Message);
                 RequestSuccessfull = false;
 
                 // Unable to get location

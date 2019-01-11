@@ -4,10 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="WeatherApplication.Views.LocationBasedWeather"
     xmlns:SubViews="clr-namespace:WeatherApplication.Views.SubViews"
-    xmlns:Converter="clr-namespace:WeatherApplication.Views.Converter"
+    xmlns:Converter="clr-namespace:WeatherApplication.Views.Converter"             
+    xmlns:Resource="clr-namespace:WeatherApplication.Services"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
     ios:Page.UseSafeArea="true"
-    Title="Aktueller Ort">
+    Title="{Resource:Translate AdressSearch}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converter:InverseBooleanConverter x:Key="InverseBoolean" />
@@ -26,7 +27,7 @@
             <ActivityIndicator HorizontalOptions="Center" 
                                IsRunning="{Binding IsLoading}" />
             
-            <Label Text="Loading Weather"
+            <Label Text="{Resource:Translate Loading}"
                    HorizontalOptions="Center"
                    FontSize="Large" />
         </StackLayout>

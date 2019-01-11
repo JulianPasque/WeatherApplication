@@ -83,7 +83,7 @@ namespace WeatherApplication.ViewModels
 
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {
-                ErrorMessage = "Internet required";
+                ErrorMessage = Resources.AppResources.InternetRequired;
                 IsLoading = false;
                 return;
             }
@@ -96,7 +96,7 @@ namespace WeatherApplication.ViewModels
             }
             catch (Exception)
             {
-                ErrorMessage = "Land und Stadtkombination prüfen";
+                ErrorMessage = Resources.AppResources.CityCountryCombination; 
                 RequestSuccessfull = false;
             }
             IsLoading = false;

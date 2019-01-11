@@ -5,6 +5,7 @@
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:Class="WeatherApplication.Views.CountryPickerPage"
+             xmlns:Resource="clr-namespace:WeatherApplication.Services"
              ios:Page.UseSafeArea="true"
              BackgroundColor="White">
     <ContentPage.Content>
@@ -17,7 +18,7 @@
                                       EventArgsParameterPath="Item" />
             </ListView.Behaviors>
             <ListView.Header>
-                <SearchBar Placeholder="Country to search for" 
+                <SearchBar Placeholder="{Resource:Translate SearchCountry}" 
                            Text="{Binding Text}"
                            SearchCommand="{Binding SearchCommand}" 
                            HorizontalOptions="Fill">

@@ -6,7 +6,6 @@
              xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:Converter="clr-namespace:WeatherApplication.Views.Converter"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:Resource="clr-namespace:WeatherApplication.Services"
              ios:Page.UseSafeArea="true"
              Title="{Resource:Translate AdressSearch}"
@@ -41,8 +40,8 @@
 
                 <ActivityIndicator HorizontalOptions="Center"
                                    IsRunning="{Binding IsLoading}" />
-            
-                <Label Text="Loading Weather"
+
+                <Label Text="{Resource:Translate Loading}"
                        HorizontalOptions="Center" 
                        FontSize="Large" />
                 
@@ -97,7 +96,7 @@
                         </BoxView>
 
                         <Label Grid.Row="2" Grid.Column="1"
-                               Text="Stadt"
+                               Text="{Resource:Translate City}"
                                Style="{StaticResource LabelFO}" />
 
                         <Entry Grid.Row="2" Grid.Column="3"

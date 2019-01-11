@@ -107,4 +107,28 @@
     <value>Country</value>
     <comment>Country</comment>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading Weather</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="SearchCountry" xml:space="preserve">
+    <value>Search a Country</value>
+  </data>
+  <data name="CityCountryCombination" xml:space="preserve">
+    <value>Please check the city and country combination</value>
+  </data>
+  <data name="InternetRequired" xml:space="preserve">
+    <value>An internet connection is required</value>
+  </data>
+  <data name="NoLocation" xml:space="preserve">
+    <value>No gps informations found</value>
+  </data>
+  <data name="NoPermission" xml:space="preserve">
+    <value>No permission</value>
+  </data>
+  <data name="NotSupported" xml:space="preserve">
+    <value>GPS is not supported</value>
+  </data>
 </root>

@@ -70,6 +70,24 @@ namespace WeatherApplication.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die City ähnelt.
+        /// </summary>
+        internal static string City {
+            get {
+                return ResourceManager.GetString("City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please check the city and country combination ähnelt.
+        /// </summary>
+        internal static string CityCountryCombination {
+            get {
+                return ResourceManager.GetString("CityCountryCombination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Country ähnelt.
         /// </summary>
         internal static string Country {
@@ -79,11 +97,65 @@ namespace WeatherApplication.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die An internet connection is required ähnelt.
+        /// </summary>
+        internal static string InternetRequired {
+            get {
+                return ResourceManager.GetString("InternetRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Loading Weather ähnelt.
+        /// </summary>
+        internal static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Location search ähnelt.
         /// </summary>
         internal static string LocationSearch {
             get {
                 return ResourceManager.GetString("LocationSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No gps informations found ähnelt.
+        /// </summary>
+        internal static string NoLocation {
+            get {
+                return ResourceManager.GetString("NoLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die No permission ähnelt.
+        /// </summary>
+        internal static string NoPermission {
+            get {
+                return ResourceManager.GetString("NoPermission", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die GPS is not supported ähnelt.
+        /// </summary>
+        internal static string NotSupported {
+            get {
+                return ResourceManager.GetString("NotSupported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Search a Country ähnelt.
+        /// </summary>
+        internal static string SearchCountry {
+            get {
+                return ResourceManager.GetString("SearchCountry", resourceCulture);
             }
         }
     }

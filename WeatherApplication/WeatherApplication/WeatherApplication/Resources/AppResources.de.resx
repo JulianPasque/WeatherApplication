@@ -126,4 +126,28 @@
   <data name="Country" xml:space="preserve">
     <value>Land</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Lade Wetterdaten</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>Stadt</value>
+  </data>
+  <data name="SearchCountry" xml:space="preserve">
+    <value>Land suchen </value>
+  </data>
+  <data name="CityCountryCombination" xml:space="preserve">
+    <value>Land und Stadtkombination prüfen</value>
+  </data>
+  <data name="InternetRequired" xml:space="preserve">
+    <value>Eine Internetverbindung ist notwendig</value>
+  </data>
+  <data name="NoLocation" xml:space="preserve">
+    <value>Keine gps Informationen verfügbar</value>
+  </data>
+  <data name="NoPermission" xml:space="preserve">
+    <value>Keine Berechtigung</value>
+  </data>
+  <data name="NotSupported" xml:space="preserve">
+    <value>GPS ist nicht unterstützt</value>
+  </data>
 </root>

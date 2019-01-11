@@ -7,8 +7,9 @@
              xmlns:Converter="clr-namespace:WeatherApplication.Views.Converter"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:Resource="clr-namespace:WeatherApplication.Services"
              ios:Page.UseSafeArea="true"
-             Title="Adress search"
+             Title="{Resource:Translate AdressSearch}"
              Padding="0,0,0,10">
            <ContentPage.Resources>
         <ResourceDictionary>
@@ -72,7 +73,7 @@
                             </Grid.RowDefinitions>
 
                             <Label Grid.Row="1" Grid.Column="1"
-                                   Text="Ländercode"
+                                   Text="{Resource:Translate Country}"
                                    Style="{StaticResource LabelFO}" />
 
                          <ffimageloadingsvg:SvgCachedImage Grid.Row="1"
